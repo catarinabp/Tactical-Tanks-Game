@@ -1,19 +1,50 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import org.example.GUI.LanternaGUI;
+import org.example.model.menu.Menu;
+import org.example.states.MenuState;
+import org.example.states.State;
+
+import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public class Game {
-    public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    private final LanternaGUI gui;
+    private State state;
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    public Game() throws FontFormatException, IOException, URISyntaxException {
+        this.gui = new LanternaGUI(20, 20);
+        this.state = new MenuState(new Menu());
+    }
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+    public static void main(String[] args) throws IOException, FontFormatException, URISyntaxException {
+        new Game().start();
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    private void start() throws IOException {
+        int FPS = 10;
+        int frameTime = 1000 / FPS;
+
+        while (this.state != null) {
+            long startTime = System.currentTimeMillis();
+
+            state.step(this, gui, startTime);
+
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            long sleepTime = frameTime - elapsedTime;
+
+            try {
+                if (sleepTime > 0) Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+            }
         }
+
+        gui.close();
     }
 }
+
