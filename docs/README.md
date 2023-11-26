@@ -13,6 +13,7 @@ O jogador não poderá retornar a jogar a partir do último nível a que consegu
 This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana Catarina Patrício (up202107383@fe.up.pt) e Mariana de Sá Melo (up202207877@fe.up.pt) no âmbito da UC de LDTS 1º sem 2023⁄24.
 Grupo l14gr06
 
+
 ### IMPLEMENTED FEATURES
 
 - **Mover** - O tanque do utilizador move-se no mapa através das teclas direcionais (↑↓←→)
@@ -33,8 +34,8 @@ Grupo l14gr06
                                                     INSTRUCTIONS
                                                     RECORDS
                                                     EXIT
-![Alt text](/Pictures/menu.png?raw=true)
-![Alt text](/Pictures/instructions.png?raw=true)
+![Alt text](/docs/menu.png?raw=true)
+![Alt text](/docs/instructions.png?raw=true)
 
 - **Níveis** - Quando o jogador matar todos os tanques inimigos, passa para o próximo nível
 
