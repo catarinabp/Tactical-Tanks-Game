@@ -33,8 +33,8 @@ Grupo l14gr06
                                                     INSTRUCTIONS
                                                     RECORDS
                                                     EXIT
-![Alt text](/Pictures/menu.jpeg?raw=true)
-![Alt text](/Pictures/instructions.jpeg?raw=true)
+![Alt text](/Pictures/menu.png?raw=true)
+![Alt text](/Pictures/instructions.png?raw=true)
 
 - **Níveis** - Quando o jogador matar todos os tanques inimigos, passa para o próximo nível
 
@@ -43,7 +43,7 @@ Grupo l14gr06
 - **Tempo limite** - Em níveis mais avançados o jogador deixará de ter tempo ilimitado para rebentar os tanques inimigos e haverá um contador de tempo decrescente em formto de relógio digital fora do limite do mapa.
 
 - **Número de disparos limite** - Em níveis mais avançados o jogador terá um número de balas muito reduzido e não poderá repor o número de balas a meio do jogo (com excessão de níveis em que o desafio é ter um número muito reduzido de balas).
-![Alt text](/docs/game.jpeg?raw=true)
+![Alt text](/docs/game.png?raw=true)
 
 
 **The Pattern**
