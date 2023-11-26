@@ -10,18 +10,23 @@ No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. 
 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecerá o recorde (nível máximo alcançado).
 
-This project was developed by Ana Catarina Patrício (up202107383@fe.up.pt), ... (up@fe.up.pt) e ... (@fe.up.pt) no âmbito da UC de LDTS 1º sem 2023⁄24.
+This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana Catarina Patrício (up202107383@fe.up.pt) e Mariana de Sá Melo (up202207877@fe.up.pt) no âmbito da UC de LDTS 1º sem 2023⁄24.
 Grupo l14gr06
 
 ### IMPLEMENTED FEATURES
 
 - **Mover** - O tanque do utilizador move-se no mapa através das teclas direcionais (↑↓←→)
-- **Disparar** - Pode-se disparar em 4 direções diferentes usando as teclas wasd: para cima (w), para baixo (s), para a esquerda (a) e para a direita (d)
+
 - **Inimigos** - Os inimigos serão npcs que disparam e se movem aleatoriamente continuamente
-- **Caixas** - As caixas servem de escudo estrategicamente. As balas não passam por entre as caixas.
-- **Buracos** - Os tanques não podem passar pelos buracos. As balas passam por cima dos buracos.
+
+- **Caixas** - As caixas servem de escudo estrategicamente. As balas não passam por entre as caixas
+
+- **Buracos** - Os tanques não podem passar pelos buracos. As balas passam por cima dos buracos
+
 
 ### PLANNED FEATURES
+
+- **Disparar** - Pode-se disparar em 4 direções diferentes usando as teclas wasd: para cima (w), para baixo (s), para a esquerda (a) e para a direita (d)
 
 - **Menu** - O menu apresentará os seguintes tópicos:
                                                     PLAY
@@ -40,6 +45,7 @@ Grupo l14gr06
 - **Número de disparos limite** - Em níveis mais avançados o jogador terá um número de balas muito reduzido e não poderá repor o número de balas a meio do jogo (com excessão de níveis em que o desafio é ter um número muito reduzido de balas).
 ![Alt text](/docs/game.jpeg?raw=true)
 
+
 **The Pattern**
 
 Escolhemos usar o State Pattern para o GameState e MenuState. Essa abordagem utiliza subclasses para representar cada estado, sendo por isso mais fácil mudar de estado. Fica tudo encapsulado numa única classe e usa-se o Single Responsibility Principle e Open/Closed Principle.
@@ -47,13 +53,12 @@ Escolhemos usar o State Pattern para o GameState e MenuState. Essa abordagem uti
 A principal razão para esta escolha foi a necessidade de lidar com as mudanças de estado dos objetos. O State Pattern permite a desvinculação das transições de estado do algoritmo principal. Dá-nos ainda a liberdade de criar novos estados mais facilmente à medida que desenvolvemos o jogo se necessário.
 
 Outro design pattern escolhido é o Factory Method pois permite criar subclasses, nomeadamente, os elementos do jogo.
-
+![Alt text](/docs/uml.jpg?raw=true)
 
 ### SELF-EVALUATION
 
 Julgamos que os 3 integrantes trabalharam de igual modo para concretizar este projeto, posto isto:
 
+- Afonso Campelo Poças: (100/3)%
 - Ana Catarina Patrício: (100/3)%
-- ...: (100/3)%
-- ...: (100/3)%
-
+- Mariana de Sá Melo: (100/3)%
