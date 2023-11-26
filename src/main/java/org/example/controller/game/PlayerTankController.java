@@ -28,25 +28,6 @@ public class PlayerTankController extends GameController {
         movePlayer(getModel().getPlayerTank().getPosition().getDown());
     }
 
-    public void shootUp() {
-        shoot(getModel().getPlayerTank().getPosition().getUp());
-    }
-
-    public void shootDown() {
-        shoot(getModel().getPlayerTank().getPosition().getDown());
-    }
-
-    public void shootLeft() {
-        shoot(getModel().getPlayerTank().getPosition().getLeft());
-    }
-
-    public void shootRight() {
-        shoot(getModel().getPlayerTank().getPosition().getRight());
-    }
-
-    private void shoot(Position position) {
-
-    }
 
     private void movePlayer(Position position) {
         if (getModel().isEmpty(position)) {
