@@ -1,7 +1,5 @@
 package org.example.controller.game;
 
-package org.example.controller.game;
-
 import org.example.GUI.GUI;
 import org.example.Game;
 import org.example.model.Position;
@@ -15,19 +13,17 @@ public class ShootController extends GameController{
         super(map);
     }
     public void shootUp() {
-        shoot(getModel().getPlayerTank().getPosition().getUp());
     }
 
     public void shootDown() {
-        shoot(getModel().getPlayerTank().getPosition().getDown());
+
     }
 
     public void shootLeft() {
-        shoot(getModel().getPlayerTank().getPosition().getLeft());
+
     }
 
     public void shootRight() {
-        shoot(getModel().getPlayerTank().getPosition().getRight());
     }
 
 

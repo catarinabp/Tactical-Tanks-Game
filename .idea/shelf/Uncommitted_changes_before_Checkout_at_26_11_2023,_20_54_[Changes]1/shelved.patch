@@ -1,0 +1,56 @@
+Index: src/main/java/org/example/GUI/LanternaGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.GUI;\n\nimport com.googlecode.lanterna.TerminalSize;\nimport com.googlecode.lanterna.TextColor;\nimport com.googlecode.lanterna.graphics.TextGraphics;\nimport com.googlecode.lanterna.input.KeyStroke;\nimport com.googlecode.lanterna.input.KeyType;\nimport com.googlecode.lanterna.screen.Screen;\nimport com.googlecode.lanterna.screen.TerminalScreen;\nimport com.googlecode.lanterna.terminal.DefaultTerminalFactory;\nimport com.googlecode.lanterna.terminal.Terminal;\nimport com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;\nimport org.example.model.Position;\n\nimport java.awt.*;\nimport java.io.File;\nimport java.io.IOException;\nimport java.net.URISyntaxException;\nimport java.net.URL;\n\npublic class LanternaGUI implements GUI {\n    private final Screen screen;\n\n    public LanternaGUI(Screen screen) {\n        this.screen = screen;\n    }\n\n    public LanternaGUI(int width, int height) throws IOException, FontFormatException, URISyntaxException {\n        AWTTerminalFontConfiguration fontConfig = loadSquareFont();\n        Terminal terminal = createTerminal(width, height, fontConfig);\n        this.screen = createScreen(terminal);\n    }\n\n    private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {\n        URL resource = getClass().getClassLoader().getResource(\"fonts/square.ttf\");\n        File fontFile = new File(resource.toURI());\n        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);\n\n        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();\n        ge.registerFont(font);\n\n        Font loadedFont = font.deriveFont(Font.PLAIN, 25);\n        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);\n        return fontConfig;\n    }\n\n    private Screen createScreen(Terminal terminal) throws IOException {\n        final Screen screen;\n        screen = new TerminalScreen(terminal);\n\n        screen.setCursorPosition(null);\n        screen.startScreen();\n        screen.doResizeIfNecessary();\n        return screen;\n    }\n\n    private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {\n        TerminalSize terminalSize = new TerminalSize(width, height + 1);\n        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory()\n                .setInitialTerminalSize(terminalSize);\n        terminalFactory.setForceAWTOverSwing(true);\n        terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);\n        Terminal terminal = terminalFactory.createTerminal();\n        return terminal;\n    }\n\n    public ACTION getNextAction() throws IOException {\n        KeyStroke keyStroke = screen.pollInput();\n        if (keyStroke == null) return ACTION.NONE;\n\n        if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;\n        if (keyStroke.getKeyType() == KeyType.Character) {\n            char c = keyStroke.getCharacter();\n            switch (c) {\n                case 'w':\n                    return ACTION.UP;\n                case 'a':\n                    return ACTION.LEFT;\n                case 's':\n                    return ACTION.DOWN;\n                case 'd':\n                    return ACTION.RIGHT;\n                case 'q':\n                    return ACTION.QUIT;\n            }\n        }\n        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;\n\n        return ACTION.NONE;\n\n    }\n\n    @Override\n    public void drawPlayerTank(Position position) {\n\n        drawCharacter(position.getX(), position.getY(), 'T', \"#FFD700\");\n    }\n\n    @Override\n    public void drawWall(Position position) {\n\n        drawCharacter(position.getX(), position.getY(), '#', \"#3333FF\");\n    }\n\n    @Override\n    public void drawBox(Position position) {\n\n        drawCharacter(position.getX(), position.getY(), '#', \"#3333FF\");\n    }\n\n    @Override\n    public void drawHole(Position position) {\n        drawCharacter(position.getX(), position.getY(), 'O', \"#3333FF\");\n    }\n\n    @Override\n    public void drawNPC(Position position) {\n\n        drawCharacter(position.getX(), position.getY(), 'X', \"#CC0000\");\n    }\n\n    @Override\n    public void drawText(Position position, String text, String color) {\n        TextGraphics tg = screen.newTextGraphics();\n        tg.setForegroundColor(TextColor.Factory.fromString(color));\n        tg.putString(position.getX(), position.getY(), text);\n    }\n\n    private void drawCharacter(int x, int y, char c, String color) {\n        TextGraphics tg = screen.newTextGraphics();\n        tg.setForegroundColor(TextColor.Factory.fromString(color));\n        tg.putString(x, y + 1, \"\" + c);\n    }\n\n    @Override\n    public void clear() {\n        screen.clear();\n    }\n\n    @Override\n    public void refresh() throws IOException {\n        screen.refresh();\n    }\n\n    @Override\n    public void close() throws IOException {\n        screen.close();\n    }\n}\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/GUI/LanternaGUI.java b/src/main/java/org/example/GUI/LanternaGUI.java
+--- a/src/main/java/org/example/GUI/LanternaGUI.java	
++++ b/src/main/java/org/example/GUI/LanternaGUI.java	
+@@ -119,6 +119,12 @@
+         drawCharacter(position.getX(), position.getY(), 'X', "#CC0000");
+     }
+ 
++    @Override
++    public void drawShoot(Position position) {
++
++        drawCharacter(position.getX(), position.getY(), '+', "#CC0000");
++    }
++
+     @Override
+     public void drawText(Position position, String text, String color) {
+         TextGraphics tg = screen.newTextGraphics();
+Index: src/test/java/org/example/MapController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/MapController.java b/src/test/java/org/example/MapController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/test/java/org/example/MapController.java	
+@@ -0,0 +1,4 @@
++package org.example;
++
++public class MapController {
++}
+Index: src/main/java/org/example/GUI/GUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.GUI;\n\nimport org.example.model.Position;\n\nimport java.io.IOException;\n\npublic interface GUI {\n    ACTION getNextAction() throws IOException;\n\n    void drawPlayerTank(Position position);\n\n    void drawWall(Position position);\n    void drawBox (Position position);\n\n    void drawHole (Position position);\n\n    void drawNPC(Position position);\n\n    void drawText(Position position, String text, String color);\n\n    void clear();\n\n    void refresh() throws IOException;\n\n    void close() throws IOException;\n\n    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, SHOOTUP, SHOOTDOWN, SHOOTRIGHT, SHOOTLEFT}\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/GUI/GUI.java b/src/main/java/org/example/GUI/GUI.java
+--- a/src/main/java/org/example/GUI/GUI.java	
++++ b/src/main/java/org/example/GUI/GUI.java	
+@@ -12,6 +12,8 @@
+     void drawWall(Position position);
+     void drawBox (Position position);
+ 
++    void drawShoot (Position position);
++
+     void drawHole (Position position);
+ 
+     void drawNPC(Position position);

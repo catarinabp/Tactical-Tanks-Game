@@ -12,6 +12,8 @@ public interface GUI {
     void drawWall(Position position);
     void drawBox (Position position);
 
+    void drawShoot (Position position);
+
     void drawHole (Position position);
 
     void drawNPC(Position position);
