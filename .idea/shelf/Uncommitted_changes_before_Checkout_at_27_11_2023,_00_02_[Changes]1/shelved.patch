@@ -1,0 +1,103 @@
+Index: src/test/java/org/example/controllers/PlayerTankControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/controllers/PlayerTankControllerTest.java b/src/test/java/org/example/controllers/PlayerTankControllerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043335347)
++++ b/src/test/java/org/example/controllers/PlayerTankControllerTest.java	(date 1701043335347)
+@@ -0,0 +1,4 @@
++package org.example.controllers;
++
++public class PlayerTankControllerTest {
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"1b280471-3136-4f10-81c7-f11666ec67df\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand />\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 1\n}</component>\n  <component name=\"ProjectId\" id=\"2YglTvy5EPu4FHBAnFe2OfwO2D2\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;controller&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/marianamelo/IdeaProjects/ldts/tactical-tanks1&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/marianamelo/IdeaProjects/ldts/tactical-tanks1/src/main/java/org/example/Main.java&quot;,\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java/org/example/model/game\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Gradle.MapControllerTest.PlayerTankStaysWithinBounds\">\n    <configuration name=\"MapControllerTest.PlayerTankStaysWithinBounds\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\":test\" />\n            <option value=\"--tests\" />\n            <option value=\"&quot;com.aor.hero.controller.MapControllerTest.PlayerTankStaysWithinBounds&quot;\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <RunAsTest>true</RunAsTest>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"PlayerTankControllerTest\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\":test\" />\n            <option value=\"--tests\" />\n            <option value=\"&quot;org.example.controller.PlayerTankControllerTest&quot;\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <RunAsTest>true</RunAsTest>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"PlayerTankControllerTest.testMovePlayerUp (1)\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\":test\" />\n            <option value=\"--tests\" />\n            <option value=\"&quot;org.example.controller.PlayerTankControllerTest.testMovePlayerUp&quot;\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <RunAsTest>true</RunAsTest>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"PlayerTankControllerTest.testMovePlayerUp\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\":test\" />\n            <option value=\"--tests\" />\n            <option value=\"&quot;PlayerTankControllerTest.testMovePlayerUp&quot;\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <RunAsTest>true</RunAsTest>\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Gradle.MapControllerTest.PlayerTankStaysWithinBounds\" />\n        <item itemvalue=\"Gradle.PlayerTankControllerTest\" />\n        <item itemvalue=\"Gradle.PlayerTankControllerTest.testMovePlayerUp (1)\" />\n        <item itemvalue=\"Gradle.PlayerTankControllerTest.testMovePlayerUp\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"1b280471-3136-4f10-81c7-f11666ec67df\" name=\"Changes\" comment=\"\" />\n      <created>1700955114985</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700955114985</updated>\n      <workItem from=\"1700955116340\" duration=\"389000\" />\n      <workItem from=\"1700956259786\" duration=\"246000\" />\n      <workItem from=\"1700956659501\" duration=\"309000\" />\n      <workItem from=\"1700957005047\" duration=\"4565000\" />\n      <workItem from=\"1701034499175\" duration=\"5791000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/GUI/LanternaGUI.java</url>\n          <line>28</line>\n          <option name=\"timeStamp\" value=\"5\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision accb5f846ab851b9f507db3e949cc507c7cf8ff4)
++++ b/.idea/workspace.xml	(date 1701043340424)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1b280471-3136-4f10-81c7-f11666ec67df" name="Changes" comment="" />
++    <list default="true" id="1b280471-3136-4f10-81c7-f11666ec67df" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controllers/MapControllerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controllers/NPCSControllerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controllers/PlayerTankControllerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/viewer/MapViewerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/viewer/PlayerTankTest.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -74,6 +80,7 @@
+ }</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/test/java" />
+       <recent name="$PROJECT_DIR$/src/main/java/org/example/model/game" />
+     </key>
+   </component>
+Index: src/test/java/org/example/controllers/MapControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/controllers/MapControllerTest.java b/src/test/java/org/example/controllers/MapControllerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043335352)
++++ b/src/test/java/org/example/controllers/MapControllerTest.java	(date 1701043335352)
+@@ -0,0 +1,4 @@
++package org.example.controllers;
++
++public class MapControllerTest {
++}
+Index: src/test/java/org/example/viewer/PlayerTankTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/viewer/PlayerTankTest.java b/src/test/java/org/example/viewer/PlayerTankTest.java
+new file mode 100644
+--- /dev/null	(date 1701043335338)
++++ b/src/test/java/org/example/viewer/PlayerTankTest.java	(date 1701043335338)
+@@ -0,0 +1,4 @@
++package org.example.viewer;
++
++public class PlayerTankTest {
++}
+Index: src/test/java/org/example/controllers/NPCSControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/controllers/NPCSControllerTest.java b/src/test/java/org/example/controllers/NPCSControllerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043335342)
++++ b/src/test/java/org/example/controllers/NPCSControllerTest.java	(date 1701043335342)
+@@ -0,0 +1,4 @@
++package org.example.controllers;
++
++public class NPCSControllerTest {
++}
+Index: src/test/java/org/example/viewer/MapViewerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/viewer/MapViewerTest.java b/src/test/java/org/example/viewer/MapViewerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043335332)
++++ b/src/test/java/org/example/viewer/MapViewerTest.java	(date 1701043335332)
+@@ -0,0 +1,4 @@
++package org.example.viewer;
++
++public class MapViewerTest {
++}

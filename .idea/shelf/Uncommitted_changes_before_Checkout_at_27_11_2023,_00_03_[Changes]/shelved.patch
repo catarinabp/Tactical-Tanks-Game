@@ -1,0 +1,120 @@
+Index: src/test/java/org/example/controllers/PlayerTankControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/controllers/PlayerTankControllerTest.java b/src/test/java/org/example/controllers/PlayerTankControllerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043403000)
++++ b/src/test/java/org/example/controllers/PlayerTankControllerTest.java	(date 1701043403000)
+@@ -0,0 +1,31 @@
++package org.example.controller;
++
++import org.example.Game;
++import org.example.GUI.GUI;
++import org.example.controller.game.PlayerTankController;
++import org.example.model.Position;
++import org.example.model.game.elements.NPCs;
++import org.example.model.game.map.Map;
++import org.junit.jupiter.api.Test;
++
++import static org.mockito.Mockito.*;
++import static org.junit.jupiter.api.Assertions.assertEquals;
++
++class PlayerTankControllerTest {
++
++    @Test
++    void testMovePlayerUp() {
++
++        Map map = mock(Map.class);
++        PlayerTankController playerTankController = new PlayerTankController(map);
++        Position initialPosition = new Position(1, 1);
++        playerTankController.getModel().getPlayerTank().setPosition(initialPosition);
++
++        playerTankController.movePlayerUp();
++
++        Position expectedPosition = new Position(0, 1);
++        assertEquals(expectedPosition, playerTankController.getModel().getPlayerTank().getPosition());
++    }
++
++    // Adicione mais testes para os outros métodos conforme necessário
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"1b280471-3136-4f10-81c7-f11666ec67df\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand />\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 1\n}</component>\n  <component name=\"ProjectId\" id=\"2YglTvy5EPu4FHBAnFe2OfwO2D2\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/marianamelo/IdeaProjects/ldts/tactical-tanks1/src/main/java/org/example/model/game&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/marianamelo/IdeaProjects/ldts/tactical-tanks1/src/main/java/org/example/Main.java&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java/org/example/model/game\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"1b280471-3136-4f10-81c7-f11666ec67df\" name=\"Changes\" comment=\"\" />\n      <created>1700955114985</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700955114985</updated>\n      <workItem from=\"1700955116340\" duration=\"389000\" />\n      <workItem from=\"1700956259786\" duration=\"246000\" />\n      <workItem from=\"1700956659501\" duration=\"309000\" />\n      <workItem from=\"1700957005047\" duration=\"4565000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Game.java</url>\n          <line>15</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/Controller.java</url>\n          <line>53</line>\n          <option name=\"timeStamp\" value=\"2\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision aa88fba8627bea3bb38c41d6b9e59ee909474669)
++++ b/.idea/workspace.xml	(date 1701043367109)
+@@ -4,7 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1b280471-3136-4f10-81c7-f11666ec67df" name="Changes" comment="" />
++    <list default="true" id="1b280471-3136-4f10-81c7-f11666ec67df" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controllers/MapControllerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controllers/NPCSControllerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/controllers/PlayerTankControllerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/viewer/MapViewerTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/viewer/PlayerTankTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -68,6 +75,7 @@
+ }</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/test/java" />
+       <recent name="$PROJECT_DIR$/src/main/java/org/example/model/game" />
+     </key>
+   </component>
+Index: src/test/java/org/example/viewer/MapViewerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/viewer/MapViewerTest.java b/src/test/java/org/example/viewer/MapViewerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043363053)
++++ b/src/test/java/org/example/viewer/MapViewerTest.java	(date 1701043363053)
+@@ -0,0 +1,4 @@
++package org.example.viewer;
++
++public class MapViewerTest {
++}
+Index: src/test/java/org/example/viewer/PlayerTankTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/viewer/PlayerTankTest.java b/src/test/java/org/example/viewer/PlayerTankTest.java
+new file mode 100644
+--- /dev/null	(date 1701043363046)
++++ b/src/test/java/org/example/viewer/PlayerTankTest.java	(date 1701043363046)
+@@ -0,0 +1,4 @@
++package org.example.viewer;
++
++public class PlayerTankTest {
++}
+Index: src/test/java/org/example/controllers/NPCSControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/controllers/NPCSControllerTest.java b/src/test/java/org/example/controllers/NPCSControllerTest.java
+new file mode 100644
+--- /dev/null	(date 1701043363049)
++++ b/src/test/java/org/example/controllers/NPCSControllerTest.java	(date 1701043363049)
+@@ -0,0 +1,4 @@
++package org.example.controllers;
++
++public class NPCSControllerTest {
++}
+diff --git a/src/test/java/org/example/controllers/MapControllerTest.java b/src/test/java/org/example/controllers/MapControllerTest.java
+new file mode 100644
