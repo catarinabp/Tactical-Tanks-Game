@@ -1,4 +1,4 @@
-package com.aor.hero.controller;
+package org.example.controllers;
 
 
 import org.example.GUI.GUI;
