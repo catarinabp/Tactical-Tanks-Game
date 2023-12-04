@@ -84,6 +84,11 @@ public class LanternaGUI implements GUI {
                     return ACTION.QUIT;
             }
         }
+        if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.SHOOTDOWN;
+        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.SHOOTUP;
+        if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.SHOOTLEFT;
+        if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.SHOOTRIGHT;
+
         if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
 
         return ACTION.NONE;
@@ -93,13 +98,19 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawPlayerTank(Position position) {
 
-        drawCharacter(position.getX(), position.getY(), 'T', "#FFD700");
+        drawCharacter(position.getX(), position.getY(), 'T', "#3333FF");
+    }
+
+    @Override
+    public void drawPacket(Position position) {
+
+        drawCharacter(position.getX(), position.getY(), '*', "#808080");
     }
 
     @Override
     public void drawWall(Position position) {
 
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), '#', "#E1C16E");
     }
 
     @Override

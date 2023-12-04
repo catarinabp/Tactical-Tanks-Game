@@ -1,18 +1,28 @@
 package org.example.model.game.elements;
 
 public class PlayerTank extends Element {
-    private int energy;
+    private int life;
+    private int bullets;
 
     public PlayerTank(int x, int y) {
         super(x, y);
-        this.energy = 5;
+        this.life = 5;
+        this.bullets = 2;
     }
 
-    public void decreaseEnergy() {
-        this.energy--;
+    public void decreaseLife() {
+        this.life--;
     }
 
-    public int getEnergy() {
-        return energy;
+    public void decreaseBullets() {
+        this.bullets--;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public int getBullets() {
+        return bullets;
     }
 }

@@ -1,6 +1,7 @@
 package org.example.model.game.map;
 
 import org.example.model.game.elements.NPCs;
+import org.example.model.game.elements.Packet;
 import org.example.model.game.elements.PlayerTank;
 import org.example.model.game.elements.Wall;
 
@@ -12,7 +13,9 @@ public abstract class MapBuilder {
 
         map.setPlayerTank(createPlayerTank());
         map.setNPCs(createNPCs());
+        map.setPacket(createPacket());
         map.setWalls(createWalls());
+
 
         return map;
     }
@@ -26,4 +29,6 @@ public abstract class MapBuilder {
     protected abstract List<NPCs> createNPCs();
 
     protected abstract PlayerTank createPlayerTank();
+
+    protected abstract Packet createPacket();
 }

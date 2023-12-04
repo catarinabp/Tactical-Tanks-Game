@@ -1,6 +1,7 @@
 package org.example.model.game.map;
 
 import org.example.model.game.elements.NPCs;
+import org.example.model.game.elements.Packet;
 import org.example.model.game.elements.PlayerTank;
 import org.example.model.game.elements.Wall;
 
@@ -63,5 +64,10 @@ public class RandomMapBuilder extends MapBuilder {
     @Override
     protected PlayerTank createPlayerTank() {
         return new PlayerTank(width / 2, height / 2);
+    }
+
+    @Override
+    protected Packet createPacket() {
+        return new Packet(width / 5, height / 5);
     }
 }

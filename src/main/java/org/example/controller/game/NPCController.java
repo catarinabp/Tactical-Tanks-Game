@@ -33,8 +33,8 @@ public class NPCController extends GameController {
     private void moveNPC(NPCs npc, Position position) {
         if (getModel().isEmpty(position)) {
             npc.setPosition(position);
-            if (getModel().getPlayerTank().getPosition().equals(position))
-                getModel().getPlayerTank().decreaseEnergy();
+            if (getModel().getPlayerTank().getPosition() == position)
+                getModel().getPlayerTank().decreaseLife();
         }
     }
 }

@@ -25,7 +25,7 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedStart()) game.setState(new GameState(new LoaderMapBuilder(1).createMap()));
+                if (getModel().isSelectedInstr()) game.setState(new GameState(new LoaderMapBuilder(1).createMap()));
         }
     }
 }

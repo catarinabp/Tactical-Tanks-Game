@@ -32,7 +32,9 @@ public class PlayerTankController extends GameController {
     private void movePlayer(Position position) {
         if (getModel().isEmpty(position)) {
             getModel().getPlayerTank().setPosition(position);
-            if (getModel().isNPC(position)) getModel().getPlayerTank().decreaseEnergy();
+            if (getModel().isNPC(position)) {
+                getModel().getPlayerTank().decreaseLife();
+            }
         }
     }
 

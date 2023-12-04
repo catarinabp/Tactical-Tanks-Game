@@ -5,11 +5,11 @@ import org.example.Game;
 import org.example.model.game.map.Map;
 import org.example.model.menu.Menu;
 import org.example.states.MenuState;
-import org.example.states.MenuState;
 
 import java.io.IOException;
 
 public class MapController extends GameController {
+    private final ShootController shootController;
     private final PlayerTankController playerTankController;
     private final NPCController npcController;
 
@@ -18,10 +18,11 @@ public class MapController extends GameController {
 
         this.playerTankController = new PlayerTankController(map);
         this.npcController = new NPCController(map);
+        this.shootController = new ShootController(map);
     }
 
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT || getModel().getPlayerTank().getEnergy() == 0)
+        if (action == GUI.ACTION.QUIT || getModel().getPlayerTank().getLife() == 0)
             game.setState(new MenuState(new Menu()));
         else {
             playerTankController.step(game, action, time);

@@ -9,6 +9,8 @@ public interface GUI {
 
     void drawPlayerTank(Position position);
 
+    void drawPacket(Position position);
+
     void drawWall(Position position);
     void drawBox (Position position);
 
