@@ -1,4 +1,4 @@
-## LDTS_<l14gr06> - <Tactical Tanks>
+## LDTS_l14gr06 - Tactical Tanks
 
 No jogo ao qual demos o nome de Tactical Tanks, os jogadores controlam um tanque pelo mapa (usando as teclas direcionais) e controlam para que direção querem disparar (usando as teclas wasd) com o objetivo de derrotar tanques inimigos, que serão npcs automatizados e ao mesmo tempo fugir dos disparos dos mesmos. 
 
