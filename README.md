@@ -10,4 +10,5 @@ No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. 
 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecerá o recorde (nível máximo alcançado).
 
+Captura de ecrã do jogo:
 ![Alt text](/docs/Jogo.png?raw=true)
