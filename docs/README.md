@@ -1,4 +1,4 @@
-## LDTS_<14><06> - <Tactical Tanks>
+## LDTS_<l14gr06> - <Tactical Tanks>
 
 No jogo ao qual demos o nome de Tactical Tanks, os jogadores controlam um tanque pelo mapa (usando as teclas direcionais) e controlam para que direção querem disparar (usando as teclas wasd) com o objetivo de derrotar tanques inimigos, que serão npcs automatizados e ao mesmo tempo fugir dos disparos dos mesmos. 
 
@@ -11,7 +11,6 @@ No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecer1á o recorde (nível máximo alcançado).
 
 This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana Catarina Patrício (up202107383@fe.up.pt) e Mariana de Sá Melo (up202207877@fe.up.pt) no âmbito da UC de LDTS 1º sem 2023⁄24.
-Grupo l14gr06
 
 
 ### IMPLEMENTED FEATURES

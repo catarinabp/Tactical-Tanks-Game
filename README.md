@@ -9,3 +9,5 @@ Se as balas ou do jogador ou do inimigo chocarem contra os limites do mapa, cont
 No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. O objetivo é progredir pelos diferentes níveis, cada um introduzindo novos mapas e mais difíceis tanques inimigos. A dificuldade de uns níveis será o número muito reduzido de balas, de outros o limite de tempo, de outros o número de tanques inimígos e de outros a combinação de todas estas dificuldades.
 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecerá o recorde (nível máximo alcançado).
+
+![Alt text](/docs/Jogo.png?raw=true)
