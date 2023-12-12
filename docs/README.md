@@ -43,6 +43,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 - **Tempo limite** - Em níveis mais avançados o jogador deixará de ter tempo ilimitado para rebentar os tanques inimigos e haverá um contador de tempo decrescente em formto de relógio digital fora do limite do mapa.
 
 - **Número de disparos limite** - Em níveis mais avançados o jogador terá um número de balas muito reduzido e não poderá repor o número de balas a meio do jogo (com excessão de níveis em que o desafio é ter um número muito reduzido de balas).
+
 ![Alt text](/docs/game.png?raw=true)
 
 
