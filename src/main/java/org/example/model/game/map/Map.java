@@ -16,7 +16,7 @@ public class Map {
 
     private List<NPCs> npcs;
 
-    private List<Bullets> bullets;
+
     private List<Wall> walls;
 
     private List<Hole> holes;
@@ -66,14 +66,6 @@ public class Map {
 
     public void setNPCs(List<NPCs> npcs) {
         this.npcs = npcs;
-    }
-
-    public List<Bullets> getBullets() {
-        return bullets;
-    }
-
-    public void setBullets(List<Bullets> bullets) {
-        this.bullets = bullets;
     }
 
     public List<Wall> getWalls() {
