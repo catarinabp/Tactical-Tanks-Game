@@ -19,7 +19,7 @@ public class NPCController extends GameController {
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        if (time - lastMovement > 500) {
+        if (time - lastMovement > 1000) {
             for (NPCs npc : getModel().getNPCs())
                 moveNPC(npc, npc.getPosition().getRandomNeighbour());
             this.lastMovement = time;

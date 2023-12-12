@@ -22,15 +22,18 @@ public class GameViewer extends Viewer<Map> {
     @Override
     public void drawElements(GUI gui) {
         drawElements(gui, getModel().getWalls(), new WallViewer());
+        drawElements(gui, getModel().getHoles(), new HoleViewer());
         drawElements(gui, getModel().getNPCs(), new NPCViewer());
+
         drawElement(gui, getModel().getPlayerTank(), new PlayerTankViewer());
         drawElement(gui, getModel().getPacket(), new PacketViewer());
-        if(getModel().getShoot() != null){
+        if(getModel().getShoot() != null ){
             drawElement(gui, getModel().getShoot(), new ShootViewer());
         }
 
+
         gui.drawText(new Position(2, 0), "Lives: " + getModel().getPlayerTank().getLife(), "#FFFFFF");
-        gui.drawText(new Position(12, 0), "Bullets: " + getModel().getPlayerTank().getLife(), "#FFFFFF");
+        gui.drawText(new Position(12, 0), "Bullets: " + getModel().getPlayerTank().getBullets(), "#FFFFFF");
         gui.drawText(new Position(2, 21), "Time: " + GameState.displayElapsedTime() + " seconds", "#FFFFFF");
     }
 

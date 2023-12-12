@@ -10,13 +10,16 @@ public class Map {
     private final int height;
 
     private PlayerTank playerTank;
-
+    private Packet packet;
     private Shoot shoot;
 
-    private Packet packet;
 
     private List<NPCs> npcs;
+
+    private List<Bullets> bullets;
     private List<Wall> walls;
+
+    private List<Hole> holes;
 
     public Map(int width, int height) {
         this.width = width;
@@ -65,12 +68,28 @@ public class Map {
         this.npcs = npcs;
     }
 
+    public List<Bullets> getBullets() {
+        return bullets;
+    }
+
+    public void setBullets(List<Bullets> bullets) {
+        this.bullets = bullets;
+    }
+
     public List<Wall> getWalls() {
         return walls;
     }
 
     public void setWalls(List<Wall> walls) {
         this.walls = walls;
+    }
+
+    public List<Hole> getHoles() {
+        return holes;
+    }
+
+    public void setHoles(List<Hole> holes) {
+        this.holes = holes;
     }
 
     public boolean isEmpty(Position position) {
@@ -80,10 +99,47 @@ public class Map {
         return true;
     }
 
+    public boolean isSpotEmpty(Position position) {
+        for (Wall wall : walls){
+            if (wall.getPosition().equals(position))
+                return false;
+        }
+        for (Hole hole : holes){
+            if (hole.getPosition().equals(position))
+                return false;
+        }
+        for (NPCs npc : npcs){
+            if (npc.getPosition().equals(position))
+                return false;
+        }
+        if (getPlayerTank().getPosition().equals(position))
+            return false;
+        return true;
+    }
+
     public boolean isNPC(Position position) {
         for (NPCs npcs : npcs)
             if (npcs.getPosition().equals(position))
                 return true;
         return false;
+    }
+
+    public boolean isPacket(Position position) {
+        if (packet.getPosition().equals(position))
+                return true;
+        return false;
+    }
+
+    public boolean isHole(Position position) {
+        for (Hole hole : holes)
+            if (hole.getPosition().equals(position))
+                return true;
+        return false;
+    }
+
+    public void removeNPC(NPCs npcToRemove) {
+        if (npcs != null && npcs.contains(npcToRemove)) {
+            npcs.remove(npcToRemove);
+        }
     }
 }

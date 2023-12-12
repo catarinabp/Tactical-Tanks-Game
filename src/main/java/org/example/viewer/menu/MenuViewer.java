@@ -18,6 +18,6 @@ public class MenuViewer extends Viewer<Menu> {
             gui.drawText(
                     new Position(5, 7 + i + i),
                     getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
+                    getModel().isSelected(i) ? "#43A6C6" : "#FFFFFF");
     }
 }

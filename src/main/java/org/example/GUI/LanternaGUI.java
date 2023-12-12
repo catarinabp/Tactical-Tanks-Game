@@ -74,13 +74,23 @@ public class LanternaGUI implements GUI {
             switch (c) {
                 case 'w':
                     return ACTION.UP;
+                case 'W':
+                    return ACTION.UP;
                 case 'a':
+                    return ACTION.LEFT;
+                case 'A':
                     return ACTION.LEFT;
                 case 's':
                     return ACTION.DOWN;
+                case 'S':
+                    return ACTION.DOWN;
                 case 'd':
                     return ACTION.RIGHT;
+                case 'D':
+                    return ACTION.RIGHT;
                 case 'q':
+                    return ACTION.QUIT;
+                case 'Q':
                     return ACTION.QUIT;
             }
         }
@@ -135,6 +145,7 @@ public class LanternaGUI implements GUI {
 
         drawCharacter(position.getX(), position.getY(), '+', "#CC0000");
     }
+
 
     @Override
     public void drawText(Position position, String text, String color) {

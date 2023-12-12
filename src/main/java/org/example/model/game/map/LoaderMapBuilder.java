@@ -1,9 +1,6 @@
 package org.example.model.game.map;
 
-import org.example.model.game.elements.NPCs;
-import org.example.model.game.elements.Packet;
-import org.example.model.game.elements.PlayerTank;
-import org.example.model.game.elements.Wall;
+import org.example.model.game.elements.*;
 
 
 import java.io.BufferedReader;
@@ -60,6 +57,19 @@ public class LoaderMapBuilder extends MapBuilder {
     }
 
     @Override
+    protected List<Hole> createHoles() {
+        List<Hole> holes = new ArrayList<>();
+
+        for (int y = 0; y < lines.size(); y++) {
+            String line = lines.get(y);
+            for (int x = 0; x < line.length(); x++)
+                if (line.charAt(x) == 'H') holes.add(new Hole(x, y));
+        }
+
+        return holes;
+    }
+
+    @Override
     protected List<NPCs> createNPCs() {
         List<NPCs> npcs = new ArrayList<>();
 
@@ -81,6 +91,7 @@ public class LoaderMapBuilder extends MapBuilder {
         }
         return null;
     }
+
 
     @Override
     protected Packet createPacket() {
