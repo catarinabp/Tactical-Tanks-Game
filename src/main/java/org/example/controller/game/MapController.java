@@ -5,9 +5,13 @@ import org.example.GUI.LanternaGUI;
 import org.example.Game;
 import org.example.model.game.map.LoaderMapBuilder;
 import org.example.model.game.map.Map;
+import org.example.model.menu.GameOver;
 import org.example.model.menu.Menu;
+import org.example.model.menu.Win;
+import org.example.states.GameOverState;
 import org.example.states.GameState;
 import org.example.states.MenuState;
+import org.example.states.WinState;
 
 import java.io.IOException;
 
@@ -28,12 +32,12 @@ public class MapController extends GameController {
     }
 
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT || getModel().getPlayerTank().getLife() == 0 || getModel().isHole(getModel().getPlayerTank().getPosition()) ) {
-            game.setState(new MenuState(new Menu()));
+        if (action == GUI.ACTION.QUIT || getModel().getPlayerTank().getLife() == 0 || getModel().isHole(getModel().getPlayerTank().getPosition())) {
+            game.setState(new GameOverState(new GameOver()));
         }
         else if (getModel().getNPCs().isEmpty()){
+            game.setState(new WinState(new Win()));
             GameState.finishGame(1);
-            game.setState(new GameState(new LoaderMapBuilder(2).createMap()));
         }
         else {
             playerTankController.step(game, action, time);

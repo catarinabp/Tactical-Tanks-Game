@@ -69,9 +69,6 @@ public class GameState extends State<Map> {
         }
     }
 
-
-
-
     @Override
     protected Viewer<Map> getViewer() {
         return new GameViewer(getModel());

@@ -1,13 +1,13 @@
 package org.example.model.menu;
 
-public class Instr extends Menu {
-    private String[] instructions;
+public class Win extends Menu {
+    private String[] win;
 
     public void setInstructions(String[] instructions) {
-        this.instructions = instructions;
+        this.win = win;
     }
 
     public String[] getInstructions() {
-        return instructions;
+        return win;
     }
 }

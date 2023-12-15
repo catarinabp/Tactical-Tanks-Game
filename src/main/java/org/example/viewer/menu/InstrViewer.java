@@ -10,7 +10,7 @@ public class InstrViewer extends Viewer<Menu> {
     private static final String DEFAULT_COLOR = "#FFFFFF";
     private static final int TITLE_X_POS = 9;
 
-    private static final int Instr_X_POS = 1;
+    private static final int Instr_X_POS = 2;
 
     private static final int TITLE_Y_POS = 3;
 
@@ -30,11 +30,11 @@ public class InstrViewer extends Viewer<Menu> {
     }
 
     private void drawInstructions(GUI gui) {
-        gui.drawText(new Position(Instr_X_POS, TITLE_Y_POS + 5), "Move by W A S D", DEFAULT_COLOR);
-        gui.drawText(new Position(Instr_X_POS, TITLE_Y_POS + 7), "Shoot by UP,DOWN,LEFT,UP ARROWS", DEFAULT_COLOR);
-        gui.drawText(new Position(Instr_X_POS, TITLE_Y_POS + 9), "You have 5 lifes", DEFAULT_COLOR);
-        gui.drawText(new Position(Instr_X_POS -1 , TITLE_Y_POS + 11), "In a hole you will die instantly", DEFAULT_COLOR);
-        gui.drawText(new Position(Instr_X_POS, TITLE_Y_POS + 13), "You win if you kill all npcs", DEFAULT_COLOR);
-        gui.drawText(new Position(Instr_X_POS -1 , TITLE_Y_POS + 15), "And you will go to another level. ", DEFAULT_COLOR);
+        gui.drawText(new Position(Instr_X_POS-2, TITLE_Y_POS + 5), "Move by W A S D", DEFAULT_COLOR);
+        gui.drawText(new Position(Instr_X_POS-2, TITLE_Y_POS + 7), "Shoot by UP,DOWN,LEFT,RIGHT arrow", DEFAULT_COLOR);
+        gui.drawText(new Position(Instr_X_POS-2, TITLE_Y_POS + 9), "You have 5 lives", DEFAULT_COLOR);
+        gui.drawText(new Position(Instr_X_POS -2 , TITLE_Y_POS + 11), "In a hole you will die instantly", DEFAULT_COLOR);
+        gui.drawText(new Position(Instr_X_POS-2, TITLE_Y_POS + 13), "You win if you kill all npcs", DEFAULT_COLOR);
+        gui.drawText(new Position(Instr_X_POS -2, TITLE_Y_POS + 15), "And you will go to another level.", DEFAULT_COLOR);
     }
 }
