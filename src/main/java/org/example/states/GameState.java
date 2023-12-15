@@ -6,9 +6,14 @@ import org.example.model.game.map.Map;
 import org.example.viewer.Viewer;
 import org.example.viewer.game.GameViewer;
 
+import javax.swing.*;
+import java.io.*;
+import java.util.Scanner;
+
 public class GameState extends State<Map> {
     private static long startTime;
     private static long elapsedTime;
+    private static String highscore = "";
 
     public GameState(Map map) {
         super(map);
@@ -26,6 +31,42 @@ public class GameState extends State<Map> {
     public static long displayElapsedTime() {
         long seconds = update() / 1_000_000_000; // Convert nanoseconds to seconds
         return seconds;
+    }
+
+
+    public static void finishGame(int level) {
+        long lastTime = displayElapsedTime();
+
+        String name = JOptionPane.showInputDialog("You set a new highscore. What is your name?");
+        String highscore = "Level " + level + " " + name + ":" + lastTime + " seconds";
+
+        File scoreFile = new File("highscore.dat");
+        if (!scoreFile.exists()) {
+            try {
+                scoreFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileWriter writeFile = null;
+        BufferedWriter writer = null;
+        try {
+            writeFile = new FileWriter(scoreFile, true); // Append mode
+            writer = new BufferedWriter(writeFile);
+            writer.write(highscore); // Write the highscore to the file
+            writer.newLine(); // Add a newline for the next entry
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override

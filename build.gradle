@@ -3,6 +3,9 @@ plugins {
     id 'application'
 }
 
+application{
+    mainClassName = 'org.example.Game'
+}
 group 'org.example'
 version '1.0-SNAPSHOT'
 

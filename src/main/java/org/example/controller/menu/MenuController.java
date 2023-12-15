@@ -6,6 +6,8 @@ import org.example.controller.Controller;
 import org.example.model.game.map.LoaderMapBuilder;
 import org.example.model.menu.Menu;
 import org.example.states.GameState;
+import org.example.states.InstrState;
+import org.example.states.RecordState;
 
 import java.io.IOException;
 
@@ -17,15 +19,17 @@ public class MenuController extends Controller<Menu> {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         switch (action) {
-            case UP:
+            case SHOOTUP:
                 getModel().previousEntry();
                 break;
-            case DOWN:
+            case SHOOTDOWN:
                 getModel().nextEntry();
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedInstr()) game.setState(new GameState(new LoaderMapBuilder(1).createMap()));
+                if (getModel().isSelectedGame()) game.setState(new GameState(new LoaderMapBuilder(1).createMap()));
+                if (getModel().isSelectedInstr()) game.setState(new InstrState(new Menu()));
+                if (getModel().isSelectedRec()) game.setState(new RecordState(new Menu()));
         }
     }
 }

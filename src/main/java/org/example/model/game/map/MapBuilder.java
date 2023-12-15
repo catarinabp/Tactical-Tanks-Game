@@ -1,9 +1,6 @@
 package org.example.model.game.map;
 
-import org.example.model.game.elements.NPCs;
-import org.example.model.game.elements.Packet;
-import org.example.model.game.elements.PlayerTank;
-import org.example.model.game.elements.Wall;
+import org.example.model.game.elements.*;
 
 import java.util.List;
 
@@ -15,6 +12,8 @@ public abstract class MapBuilder {
         map.setNPCs(createNPCs());
         map.setPacket(createPacket());
         map.setWalls(createWalls());
+        map.setHoles(createHoles());
+        map.setBoxes(createBoxes());
 
 
         return map;
@@ -26,9 +25,14 @@ public abstract class MapBuilder {
 
     protected abstract List<Wall> createWalls();
 
+    protected abstract List<Hole> createHoles();
+
     protected abstract List<NPCs> createNPCs();
+
+    protected abstract List<Box> createBoxes();
 
     protected abstract PlayerTank createPlayerTank();
 
     protected abstract Packet createPacket();
+
 }

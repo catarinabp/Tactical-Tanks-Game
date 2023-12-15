@@ -1,9 +1,6 @@
 package org.example.model.game.map;
 
-import org.example.model.game.elements.NPCs;
-import org.example.model.game.elements.Packet;
-import org.example.model.game.elements.PlayerTank;
-import org.example.model.game.elements.Wall;
+import org.example.model.game.elements.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +49,21 @@ public class RandomMapBuilder extends MapBuilder {
     }
 
     @Override
+    protected List<Hole> createHoles() {
+        List<Hole> holes = new ArrayList<>();
+
+
+        return holes;
+    }
+
+    @Override
+    protected List<Box> createBoxes() {
+        List<Box> boxes = new ArrayList<>();
+
+        return boxes;
+    }
+
+    @Override
     protected List<NPCs> createNPCs() {
         List<NPCs> npcs = new ArrayList<>();
 
@@ -70,4 +82,6 @@ public class RandomMapBuilder extends MapBuilder {
     protected Packet createPacket() {
         return new Packet(width / 5, height / 5);
     }
+
+
 }
