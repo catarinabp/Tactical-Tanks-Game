@@ -1,6 +1,7 @@
 package org.example.model;
 
-import java.util.Objects;
+import com.googlecode.lanterna.gui2.Direction;
+import org.example.GUI.GUI;
 
 public class Position {
     private final int x;
@@ -56,4 +57,20 @@ public class Position {
         Position position = (Position) o;
         return x == position.x && y == position.y;
     }
+
+    public GUI.ACTION getDirection(Position destination) {
+        int dx = destination.getX() - this.x;
+        int dy = destination.getY() - this.y;
+
+        if (dx > 0 && Math.abs(dx) >= Math.abs(dy)) {
+            return GUI.ACTION.RIGHT;
+        } else if (dx < 0 && Math.abs(dx) >= Math.abs(dy)) {
+            return GUI.ACTION.LEFT;
+        } else if (dy > 0 && Math.abs(dy) > Math.abs(dx)) {
+            return GUI.ACTION.DOWN;
+        } else {
+            return GUI.ACTION.UP;
+        }
+    }
+
 }

@@ -13,6 +13,7 @@ public abstract class MapBuilder {
         map.setPacket(createPacket());
         map.setWalls(createWalls());
         map.setHoles(createHoles());
+        map.setBoxes(createBoxes());
 
 
         return map;
@@ -27,6 +28,8 @@ public abstract class MapBuilder {
     protected abstract List<Hole> createHoles();
 
     protected abstract List<NPCs> createNPCs();
+
+    protected abstract List<Box> createBoxes();
 
     protected abstract PlayerTank createPlayerTank();
 

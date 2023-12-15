@@ -16,6 +16,7 @@ public class Map {
 
     private List<NPCs> npcs;
 
+    private List<Box> boxes;
 
     private List<Wall> walls;
 
@@ -68,6 +69,14 @@ public class Map {
         this.npcs = npcs;
     }
 
+    public List<Box> getBoxes() {
+        return boxes;
+    }
+
+    public void setBoxes(List<Box> boxes) {
+        this.boxes = boxes;
+    }
+
     public List<Wall> getWalls() {
         return walls;
     }
@@ -100,12 +109,6 @@ public class Map {
             if (hole.getPosition().equals(position))
                 return false;
         }
-        for (NPCs npc : npcs){
-            if (npc.getPosition().equals(position))
-                return false;
-        }
-        if (getPlayerTank().getPosition().equals(position))
-            return false;
         return true;
     }
 
@@ -118,7 +121,7 @@ public class Map {
 
     public boolean isPacket(Position position) {
         if (packet.getPosition().equals(position))
-                return true;
+            return true;
         return false;
     }
 
@@ -134,4 +137,5 @@ public class Map {
             npcs.remove(npcToRemove);
         }
     }
+
 }

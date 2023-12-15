@@ -21,7 +21,7 @@ public class NPCController extends GameController {
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (time - lastMovement > 1000) {
             for (NPCs npc : getModel().getNPCs())
-                moveNPC(npc, npc.getPosition().getRandomNeighbour());
+                moveNPC(npc);
             this.lastMovement = time;
         }
     }
@@ -30,11 +30,30 @@ public class NPCController extends GameController {
 
     }
 
-    private void moveNPC(NPCs npc, Position position) {
-        if (getModel().isEmpty(position)) {
-            npc.setPosition(position);
-            if (getModel().getPlayerTank().getPosition() == position)
+    private void moveNPC(NPCs npc) {
+        Position playerPosition = getModel().getPlayerTank().getPosition();
+        Position npcPosition = npc.getPosition();
+
+        int playerX = playerPosition.getX();
+        int playerY = playerPosition.getY();
+        int npcX = npcPosition.getX();
+        int npcY = npcPosition.getY();
+
+        int dx = Integer.compare(playerX, npcX);
+        int dy = Integer.compare(playerY, npcY);
+
+        Position newPosition = new Position(npcX + dx, npcY + dy);
+
+        // Check if the new position is not already occupied by another NPC
+        boolean positionOccupied = getModel().getNPCs().stream()
+                .anyMatch(otherNPC -> otherNPC.getPosition().equals(newPosition));
+
+        if (!positionOccupied && getModel().isSpotEmpty(newPosition)) {
+            npc.setPosition(newPosition);
+            if (getModel().getPlayerTank().getPosition().equals(newPosition)) {
                 getModel().getPlayerTank().decreaseLife();
+            }
         }
     }
+
 }

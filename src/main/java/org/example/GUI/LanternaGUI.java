@@ -1,6 +1,7 @@
 package org.example.GUI;
 
 import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
@@ -126,7 +127,7 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawBox(Position position) {
 
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), '-', "#3333FF");
     }
 
     @Override
@@ -174,6 +175,8 @@ public class LanternaGUI implements GUI {
     public void close() throws IOException {
         screen.close();
     }
+
+
 }
 
 

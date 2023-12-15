@@ -83,6 +83,20 @@ public class LoaderMapBuilder extends MapBuilder {
     }
 
     @Override
+
+    protected List<Box> createBoxes() {
+        List<Box> boxes = new ArrayList<>();
+
+        for (int y = 0; y < lines.size(); y++) {
+            String line = lines.get(y);
+            for (int x = 0; x < line.length(); x++)
+                if (line.charAt(x) == 'B') boxes.add(new Box(x, y));
+        }
+
+        return boxes;
+    }
+
+    @Override
     protected PlayerTank createPlayerTank() {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);

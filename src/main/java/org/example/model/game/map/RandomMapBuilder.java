@@ -57,6 +57,13 @@ public class RandomMapBuilder extends MapBuilder {
     }
 
     @Override
+    protected List<Box> createBoxes() {
+        List<Box> boxes = new ArrayList<>();
+
+        return boxes;
+    }
+
+    @Override
     protected List<NPCs> createNPCs() {
         List<NPCs> npcs = new ArrayList<>();
 
