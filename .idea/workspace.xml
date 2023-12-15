@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b280471-3136-4f10-81c7-f11666ec67df" name="Changes" comment="add new functionalities">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/screens/GameOverController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/menu/GameOver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/states/GameOverState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/states/WinState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/screens/GameOverViewer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/screens/WinViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/highscore.dat" beforeDir="false" afterPath="$PROJECT_DIR$/highscore.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/game/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/game/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/menu/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/menu/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/menu/Instr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/menu/Win.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/viewer/menu/InstrViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/viewer/menu/InstrViewer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
