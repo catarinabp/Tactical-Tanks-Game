@@ -4,6 +4,7 @@ package org.example.controller.game;
 import org.example.GUI.GUI;
 import org.example.Game;
 import org.example.model.Position;
+import org.example.model.game.elements.Box;
 import org.example.model.game.elements.Element;
 import org.example.model.game.elements.NPCs;
 import org.example.model.game.elements.Shoot;
@@ -46,6 +47,7 @@ public class ShootController extends GameController {
             moveBullet(direction);
             getModel().getPlayerTank().decreaseBullets();
         }
+
     }
 
     private void moveBullet(GUI.ACTION direction) {
@@ -76,6 +78,21 @@ public class ShootController extends GameController {
                                 getModel().setShoot(null);
                             }
                         }
+
+                    }
+                    else if (getModel().isBox(bulletPosition)) {
+                        hitSomething = true;
+                        for (Box box : getModel().getBoxes()) {
+                            if(box.getPosition().equals(bulletPosition)) {
+                                box.decreaseLife();
+                            }
+                            if (box.getLife() <= 0) {
+                                // Remove the NPC from the game when its life reaches zero
+                                getModel().removeBox(box);
+                                getModel().setShoot(null);
+                            }
+                        }
+
                     }
                 } else {
                     getModel().setShoot(null);

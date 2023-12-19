@@ -94,9 +94,10 @@ public class Map {
     }
 
     public boolean isEmpty(Position position) {
-        for (Wall wall : walls)
+        for (Wall wall : walls){
             if (wall.getPosition().equals(position))
                 return false;
+        }
         return true;
     }
 
@@ -138,4 +139,16 @@ public class Map {
         }
     }
 
+    public boolean isBox(Position position) {
+        for (Box box : boxes)
+            if (box.getPosition().equals(position))
+                return true;
+        return false;
+    }
+
+    public void removeBox(Box boxToRemove) {
+        if (boxes != null && boxes.contains(boxToRemove)) {
+            boxes.remove(boxToRemove);
+        }
+    }
 }

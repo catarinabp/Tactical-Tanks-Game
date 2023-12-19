@@ -24,6 +24,9 @@ public class GameViewer extends Viewer<Map> {
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElements(gui, getModel().getHoles(), new HoleViewer());
         drawElements(gui, getModel().getNPCs(), new NPCViewer());
+        if(getModel().getBoxes() != null){
+            drawElements(gui, getModel().getBoxes(), new BoxViewer());
+        }
 
         drawElement(gui, getModel().getPlayerTank(), new PlayerTankViewer());
         drawElement(gui, getModel().getPacket(), new PacketViewer());

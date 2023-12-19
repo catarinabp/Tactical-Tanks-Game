@@ -5,6 +5,10 @@ import org.example.model.Position;
 import org.example.model.game.elements.Packet;
 import org.example.model.game.map.Map;
 import org.example.controller.game.ShootController;
+import org.example.strategy.GreyPacketStrategy;
+import org.example.strategy.OrangePacketStrategy;
+import org.example.strategy.PacketStrategy;
+
 public class PlayerTankController extends GameController {
     public PlayerTankController(Map arena) {
         super(arena);
@@ -39,8 +43,8 @@ public class PlayerTankController extends GameController {
                 getModel().getPlayerTank().decreaseLife();
             }
             if (getModel().isPacket(position)) {
+                getModel().getPacket().applyStrategy(getModel().getPlayerTank());
                 generateRandomPacket();
-                getModel().getPlayerTank().gainBullets();
             }
         }
     }
@@ -59,10 +63,19 @@ public class PlayerTankController extends GameController {
             position = new Position(randomX, randomY);
         } while (!getModel().isSpotEmpty(position));
 
-        // Create a new packet and set its position on the map
-        Packet newPacket = new Packet(randomX, randomY);
+        // Determine the strategy to use for the new packet
+        PacketStrategy strategy = getModel().getPacket().getStrategy();
+        if (strategy instanceof GreyPacketStrategy) {
+            strategy = new OrangePacketStrategy();
+        } else if (strategy instanceof OrangePacketStrategy) {
+            strategy = new GreyPacketStrategy();
+        }
+
+        // Create a new packet with the toggled strategy and set its position on the map
+        Packet newPacket = new Packet(randomX, randomY, strategy);
         getModel().setPacket(newPacket);
     }
+
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
