@@ -33,7 +33,7 @@ public class WinViewer extends Viewer<Menu> {
         gui.drawText(new Position(TITLE_X_POS, TITLE_Y_POS), "  YOU WON", TITLE_COLOR);
     }
     private void drawInstr(GUI gui) {
-        gui.drawText(new Position(TITLE_X_POS - 8, TITLE_Y_POS + 15), "  PRESS --> TO GO TO NEXT LEVEL", TITLE_COLOR);
+        gui.drawText(new Position(TITLE_X_POS - 9, TITLE_Y_POS + 15), "  PRESS --> TO GO TO NEXT LEVEL", TITLE_COLOR);
     }
 
     private void drawInstr2(GUI gui) {

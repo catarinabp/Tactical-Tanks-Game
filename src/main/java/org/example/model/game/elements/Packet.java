@@ -18,4 +18,8 @@ public class Packet extends Element{
     public PacketStrategy getStrategy() {
         return this.strategy;
     }
+    public void setStrategy(PacketStrategy strategy) {
+        this.strategy = strategy;
+    }
+
 }

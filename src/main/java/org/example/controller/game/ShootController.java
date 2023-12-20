@@ -64,7 +64,7 @@ public class ShootController extends GameController {
                     case RIGHT -> bulletPosition = bulletPosition.getRight();
                 }
 
-                if (getModel().isEmpty(bulletPosition) && !hitSomething) {
+                if (getModel().canShoot(bulletPosition) && !hitSomething) {
                     getModel().getShoot().setPosition(bulletPosition);
                     if (getModel().isNPC(bulletPosition)) {
                         hitSomething = true;

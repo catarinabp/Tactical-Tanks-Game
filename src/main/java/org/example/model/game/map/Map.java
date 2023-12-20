@@ -98,6 +98,18 @@ public class Map {
             if (wall.getPosition().equals(position))
                 return false;
         }
+        for (Box box : boxes){
+            if (box.getPosition().equals(position))
+                return false;
+        }
+        return true;
+    }
+
+    public boolean canShoot(Position position) {
+        for (Wall wall : walls){
+            if (wall.getPosition().equals(position))
+                return false;
+        }
         return true;
     }
 
