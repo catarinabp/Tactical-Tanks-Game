@@ -24,6 +24,7 @@ public class GameOverViewer extends Viewer<Menu> {
 
     private void drawTitle(GUI gui) {
         gui.drawText(new Position(TITLE_X_POS, TITLE_Y_POS), "  GAME OVER...", TITLE_COLOR);
+        gui.drawText(new Position(TITLE_X_POS - 8, TITLE_Y_POS + 15), "  PRESS Q TO GO BACK TO MENU", TITLE_COLOR);
     }
 
 }

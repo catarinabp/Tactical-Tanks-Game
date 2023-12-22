@@ -1,6 +1,7 @@
 package org.example.model.game.map;
 
 import org.example.model.game.elements.*;
+import org.example.strategy.GreyPacketStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +81,7 @@ public class RandomMapBuilder extends MapBuilder {
 
     @Override
     protected Packet createPacket() {
-        return new Packet(width / 5, height / 5);
+        return new Packet(width / 5, height / 5,new GreyPacketStrategy());
     }
 
 

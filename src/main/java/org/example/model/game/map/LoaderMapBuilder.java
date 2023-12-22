@@ -1,6 +1,7 @@
 package org.example.model.game.map;
 
 import org.example.model.game.elements.*;
+import org.example.strategy.GreyPacketStrategy;
 
 
 import java.io.BufferedReader;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoaderMapBuilder extends MapBuilder {
-    private final int level;
+    private static int level;
     private final List<String> lines;
 
     public LoaderMapBuilder(int level) throws IOException {
@@ -21,6 +22,10 @@ public class LoaderMapBuilder extends MapBuilder {
         BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
 
         lines = readLines(br);
+    }
+
+    public static int getLevel() {
+        return level;
     }
 
     private List<String> readLines(BufferedReader br) throws IOException {
@@ -112,7 +117,7 @@ public class LoaderMapBuilder extends MapBuilder {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == '*') return new Packet(x, y);
+                if (line.charAt(x) == '*') return new Packet(x, y,new GreyPacketStrategy());
         }
         return null;
     }

@@ -12,6 +12,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.example.model.Position;
+import org.example.model.game.elements.Packet;
 
 import java.awt.*;
 import java.io.File;
@@ -113,9 +114,13 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawPacket(Position position) {
-
+    public void drawGreyPacket(Position position) {
         drawCharacter(position.getX(), position.getY(), '*', "#808080");
+    }
+
+    @Override
+    public void drawOrangePacket(Position position) {
+        drawCharacter(position.getX(), position.getY(), '*', "#FFA500");
     }
 
     @Override
@@ -127,7 +132,7 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawBox(Position position) {
 
-        drawCharacter(position.getX(), position.getY(), '-', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), '=', "#842020");
     }
 
     @Override

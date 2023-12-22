@@ -36,9 +36,8 @@ public class MapController extends GameController {
             game.setState(new GameOverState(new GameOver()));
         }
         else if (getModel().getNPCs().isEmpty()){
+            GameState.finishGame(LoaderMapBuilder.getLevel());
             game.setState(new WinState(new Win()));
-            GameState.finishGame(1);
-            game.setState(new GameState(new LoaderMapBuilder(2).createMap()) );
         }
         else {
             playerTankController.step(game, action, time);
