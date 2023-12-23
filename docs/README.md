@@ -12,7 +12,7 @@ No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. 
 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecer1á o recorde (nível máximo alcançado).
 
-This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana Catarina Patrício (up202107383@fe.up.pt) e Mariana de Sá Melo (up202207877@fe.up.pt) no âmbito da UC de LDTS 1º sem 2023⁄24.
+This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana Catarina Patrício (up202107383@fe.up.pt) e Mariana de Sá Melo (up202207877@fe.up.pt) no âmbito da UC de LDTS 1º sem 2023-24.
 
 
 ### IMPLEMENTED FEATURES
@@ -24,7 +24,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
                                                     EXIT
 
 <p align="center" justify="center">
-  <img src="screenshots/menu principal.png"/>
+  <img src="docs/screenshots/menu principal.png"/>
 </p>
 <p align="center">
   <b><i>Fig 1. Menu principal </i></b>
@@ -34,7 +34,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 <br />
 
 <p align="center" justify="center">
-  <img src="screenshots/rules.png"/>
+  <img src="docs/screenshots/rules.png"/>
 </p>
 <p align="center">
   <b><i>Fig 2. A opção "Rules" mostra as instruções de jogo </i></b>  
@@ -62,7 +62,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 - **Buracos** - O jogador não pode passar pelos buracos (representados por um O). Se neles cair, é game over.
 
 <p align="center" justify="center">
-  <img src="gifs/cair buraco.gif"/>
+  <img src="docs/gifs/cair buraco.gif"/>
 </p>
 <p align="center">
   <b><i>Gif 1. Tanque do jogador a cair num buraco </i></b>
