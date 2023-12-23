@@ -1,12 +1,9 @@
-package org.example.viewer;
+package org.example.viewer.game;
 
 import org.example.GUI.GUI;
 import org.example.model.Position;
 import org.example.model.game.elements.*;
 import org.example.model.game.map.Map;
-import org.example.states.GameState;
-import org.example.viewer.Viewer;
-import org.example.viewer.game.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,7 +11,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-public class MapViewerTest {
+public class ElementViewerTest {
 
     @Test
     public void testDrawElements() {
@@ -59,3 +56,5 @@ public class MapViewerTest {
     }
 
 }
+
+

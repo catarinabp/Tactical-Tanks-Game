@@ -1,15 +1,8 @@
-package org.example.controllers;
+package org.example.controller.game;
 
-import org.example.GUI.GUI;
-import org.example.Game;
-import org.example.controller.game.PlayerTankController;
 import org.example.model.Position;
 import org.example.model.game.elements.PlayerTank;
-import org.example.model.game.elements.Packet;
 import org.example.model.game.map.Map;
-import org.example.strategy.GreyPacketStrategy;
-import org.example.strategy.OrangePacketStrategy;
-import org.example.strategy.PacketStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

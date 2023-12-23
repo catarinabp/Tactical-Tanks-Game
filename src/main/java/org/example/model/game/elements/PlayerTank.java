@@ -20,9 +20,6 @@ public class PlayerTank extends Element {
         this.bullets--;
     }
 
-    public void gainBullets() {
-        this.bullets++;
-    }
 
     public void addBullets(int x) {
         this.bullets = this.bullets + x;

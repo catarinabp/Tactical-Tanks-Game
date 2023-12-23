@@ -1,11 +1,9 @@
-package org.example.controllers;
+package org.example.controller.game;
 
 import org.example.GUI.GUI;
 import org.example.Game;
-import org.example.controller.game.NPCController;
 import org.example.model.Position;
-import org.example.model.game.elements.NPCs;
-import org.example.model.game.elements.PlayerTank;
+import org.example.model.game.elements.*;
 import org.example.model.game.map.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
+
 
 public class NPCSControllerTest {
 

@@ -28,7 +28,7 @@ public class LoaderMapBuilder extends MapBuilder {
         return level;
     }
 
-    private List<String> readLines(BufferedReader br) throws IOException {
+    public List<String> readLines(BufferedReader br) throws IOException {
         List<String> lines = new ArrayList<>();
         for (String line; (line = br.readLine()) != null; )
             lines.add(line);

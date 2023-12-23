@@ -1,0 +1,44 @@
+package org.example.states;
+
+import org.example.controller.Controller;
+import org.example.controller.menu.InstrController;
+import org.example.model.menu.Menu;
+import org.example.states.InstrState;
+import org.example.viewer.Viewer;
+import org.example.viewer.menu.InstrViewer;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+
+class IntrStateTest {
+
+    @Test
+    void testGetViewer() {
+        // Arrange
+        Menu mockMenu = mock(Menu.class);
+        InstrState instrState = new InstrState(mockMenu);
+
+        // Act
+        Viewer<Menu> viewer = instrState.getViewer();
+
+        // Assert
+        assertEquals(InstrViewer.class, viewer.getClass());
+        // Add more assertions based on your specific implementations
+    }
+
+    @Test
+    void testGetController() {
+        // Arrange
+        Menu mockMenu = mock(Menu.class);
+        InstrState instrState = new InstrState(mockMenu);
+
+        // Act
+        Controller<Menu> controller = instrState.getController();
+
+        // Assert
+        assertEquals(InstrController.class, controller.getClass());
+        // Add more assertions based on your specific implementations
+    }
+
+    // Add more tests for other methods in InstrState class
+}

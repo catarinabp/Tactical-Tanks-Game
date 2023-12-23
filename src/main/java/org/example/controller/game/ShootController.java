@@ -50,7 +50,7 @@ public class ShootController extends GameController {
 
     }
 
-    private void moveBullet(GUI.ACTION direction) {
+    public void moveBullet(GUI.ACTION direction) {
         new java.util.Timer().scheduleAtFixedRate(new TimerTask() {
             Position bulletPosition = getModel().getPlayerTank().getPosition();
             boolean hitSomething = false;
