@@ -12,7 +12,7 @@ No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. 
 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecerá o recorde (nível máximo alcançado).
 
-Para uma versão mais detalhada da descrição do jogo clica aqui:[here](./docs/README.md).
+Para uma versão mais detalhada da descrição do jogo clica aqui: [here](./docs/README.md).
 
 ## Screenshots
 
@@ -50,7 +50,6 @@ Aqui estão alguns screenshots e gifs do jogo e respetivas descrições.
 <br>
 <br />
 
-
 ### Níveis
 
 <p align="center" justify="center">
@@ -70,6 +69,8 @@ Aqui estão alguns screenshots e gifs do jogo e respetivas descrições.
   <b><i>Fig 5. Nível 2 </i></b>
 </p>
 
+<br>
+<br />
 
 ### Animações
 
@@ -87,7 +88,7 @@ Aqui estão alguns screenshots e gifs do jogo e respetivas descrições.
   <img src="docs/gifs/perder vida.gif"/>
 </p>
 <p align="center">
-  <b><i>Gif 2. Tanque do jogador a perder uma vida </i></b>
+  <b><i>Gif 2. Tanque do jogador a perder por ficar sem vidas </i></b>
 </p>
 
 <br>
@@ -113,12 +114,12 @@ Aqui estão alguns screenshots e gifs do jogo e respetivas descrições.
   <b><i>Gif 4. Tanque do jogador a eliminar o último inimigo do nível 1 e a passar para o nível seguinte </i></b>
 </p>
 
+<br>
+<br />
+
 <p align="center" justify="center">
   <img src="docs/screenshots/game over.png"/>
 </p>
 <p align="center">
   <b><i>Fig 6. Mensagem de Game Over</i></b>
 </p>
-
-<br>
-<br />
