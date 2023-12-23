@@ -5,17 +5,11 @@ import org.example.GUI.GUI;
 import org.example.Game;
 import org.example.model.Position;
 import org.example.model.game.elements.Box;
-import org.example.model.game.elements.Element;
 import org.example.model.game.elements.NPCs;
 import org.example.model.game.elements.Shoot;
 import org.example.model.game.map.Map;
-import org.example.viewer.game.NPCViewer;
-
-import java.io.IOException;
-import java.util.List;
 import java.util.TimerTask;
 
-import static java.time.zone.ZoneRulesProvider.refresh;
 
 public class ShootController extends GameController {
     private static final int BULLET_SPEED = 100; // Adjust the speed as needed (milliseconds)

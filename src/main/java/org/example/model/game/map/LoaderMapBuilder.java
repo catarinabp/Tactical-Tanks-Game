@@ -16,7 +16,7 @@ public class LoaderMapBuilder extends MapBuilder {
     private final List<String> lines;
 
     public LoaderMapBuilder(int level) throws IOException {
-        this.level = level;
+        LoaderMapBuilder.level = level;
 
         URL resource = LoaderMapBuilder.class.getResource("/levels/level" + level + ".lvl");
         BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));

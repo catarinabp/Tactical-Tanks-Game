@@ -1,6 +1,5 @@
 package org.example.model.game.elements;
 
-import java.util.List;
 
 public class PlayerTank extends Element {
     private int life;
