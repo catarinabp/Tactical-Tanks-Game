@@ -1,4 +1,6 @@
-### Tactical Tanks
+# LDTS_T14_G06 - Tactical Tanks
+
+## Game Description
 
 Os jogadores controlam um tanque pelo mapa (usando as teclas direcionais) e controlam para que direção querem disparar (usando as teclas wasd) com o objetivo de derrotar tanques inimigos, que serão npcs automatizados e ao mesmo tempo fugir dos disparos dos mesmos.
 
@@ -10,6 +12,114 @@ No final de eliminar todos os inimigos, o jogador passa para o nível seguinte. 
 
 O jogador não poderá retornar a jogar a partir do último nível a que conseguiu chegar. Se um jogador perder num nível terá de retornar ao nível 1. No menu aparecerá o recorde (nível máximo alcançado).
 
-Captura de ecrã do jogo:
+Para uma versão mais detalhada da descrição do jogo clica aqui: [here](./docs/README.md).
 
-![Alt text](/docs/Jogo.png?raw=true)
+## Screenshots
+
+Aqui estão alguns screenshots e gifs do jogo e respetivas descrições.
+
+### Menu
+
+<p align="center" justify="center">
+  <img src="docs/screenshots/menu principal.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. Menu principal </i></b>
+</p>  
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/screenshots/rules.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. A opção "Rules" mostra as instruções de jogo </i></b>  
+</p>  
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/screenshots/records.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 3. High scores dos jogadores por ordem de melhor classificação </i></b>
+</p>
+
+<br>
+<br />
+
+### Níveis
+
+<p align="center" justify="center">
+  <img src="docs/screenshots/lev1.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Nível 1 </i></b>
+</p>
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/screenshots/lev2.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 5. Nível 2 </i></b>
+</p>
+
+<br>
+<br />
+
+### Animações
+
+<p align="center" justify="center">
+  <img src="docs/gifs/cair buraco.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 1. Tanque do jogador a cair num buraco </i></b>
+</p>
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/gifs/perder vida.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 2. Tanque do jogador a perder por ficar sem vidas </i></b>
+</p>
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/gifs/balas.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 3. Tanque do jogador a carregar balas </i></b>
+</p>
+
+<br>
+<br />
+
+
+### Fim do jogo
+
+<p align="center" justify="center">
+  <img src="docs/gifs/passar lev1.gif"/>
+</p>
+<p align="center">
+  <b><i>Gif 4. Tanque do jogador a eliminar o último inimigo do nível 1 e a passar para o nível seguinte </i></b>
+</p>
+
+<br>
+<br />
+
+<p align="center" justify="center">
+  <img src="docs/screenshots/game over.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 6. Mensagem de Game Over</i></b>
+</p>
