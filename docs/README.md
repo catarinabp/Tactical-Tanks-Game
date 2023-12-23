@@ -24,7 +24,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
                                                     EXIT
 
 <p align="center" justify="center">
-  <img src="docs/screenshots/menu principal.png"/>
+  <img src="screenshots/menu principal.png"/>
 </p>
 <p align="center">
   <b><i>Fig 1. Menu principal </i></b>
@@ -34,7 +34,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 <br />
 
 <p align="center" justify="center">
-  <img src="docs/screenshots/rules.png"/>
+  <img src="screenshots/rules.png"/>
 </p>
 <p align="center">
   <b><i>Fig 2. A opção "Rules" mostra as instruções de jogo </i></b>  
@@ -44,7 +44,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 <br />
 
 <p align="center" justify="center">
-  <img src="docs/screenshots/records.png"/>
+  <img src="screenshots/records.png"/>
 </p>
 <p align="center">
   <b><i>Fig 3. High scores dos jogadores por ordem de melhor classificação </i></b>
@@ -62,7 +62,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 - **Buracos** - O jogador não pode passar pelos buracos (representados por um O). Se neles cair, é game over.
 
 <p align="center" justify="center">
-  <img src="docs/gifs/cair buraco.gif"/>
+  <img src="gifs/cair buraco.gif"/>
 </p>
 <p align="center">
   <b><i>Gif 1. Tanque do jogador a cair num buraco </i></b>
@@ -76,7 +76,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 - **Inimigos (npcs)** - Os inimigos (representados por um X) são npcs que se movem continuamente em direção ao jogador. Se tocarem no jogador, o jogador perde uma vida. Quando o jogador ficar sem vidas é game over.
 
 <p align="center" justify="center">
-  <img src="docs/gifs/perder vida.gif"/>
+  <img src="gifs/perder vida.gif"/>
 </p>
 <p align="center">
   <b><i>Gif 2. Tanque do jogador a perder por ficar sem vidas </i></b>
@@ -92,7 +92,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 - **Número inicial de balas e packs para repor as balas** - O jogador começa com um um número de balas de acordo com o nível em que se encontra. Se as balas acabarem e o jogador ainda não tiver cumprido o objetivo de eliminar todos os npcs do mapa, terá de as repor passando pelos packs (representados por um *).Aparecerá de forma random no mapa.
 
 <p align="center" justify="center">
-  <img src="docs/gifs/balas.gif"/>
+  <img src="gifs/balas.gif"/>
 </p>
 <p align="center">
   <b><i>Gif 3. Tanque do jogador a carregar balas </i></b>
