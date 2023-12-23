@@ -24,7 +24,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
                                                     EXIT
 
 <p align="center" justify="center">
-  <img src="docs/screenshots/menu principal.png"/>
+  <img src="screenshots/menu principal.png"/>
 </p>
 <p align="center">
   <b><i>Fig 1. Menu principal </i></b>
@@ -34,7 +34,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 <br />
 
 <p align="center" justify="center">
-  <img src="docs/screenshots/rules.png"/>
+  <img src="screenshots/rules.png"/>
 </p>
 <p align="center">
   <b><i>Fig 2. A opção "Rules" mostra as instruções de jogo </i></b>  
@@ -62,7 +62,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
 - **Buracos** - O jogador não pode passar pelos buracos (representados por um O). Se neles cair, é game over.
 
 <p align="center" justify="center">
-  <img src="docs/gifs/cair buraco.gif"/>
+  <img src="gifs/cair buraco.gif"/>
 </p>
 <p align="center">
   <b><i>Gif 1. Tanque do jogador a cair num buraco </i></b>
