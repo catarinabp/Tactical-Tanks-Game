@@ -186,14 +186,13 @@ A utilização deste pattern proporciona os seguintes benefícios:
 Usamos o **_Observer pattern_**. Estabelece uma dependência de um-para-muitos entre objetos de modo que, quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Encapsula os componentes centrais (ou comuns ou do motor) em uma abstração de Subject, e os componentes variáveis (ou opcionais ou de interface do usuário) em uma hierarquia de Observer. Essa abordagem representa a parte "View" do Model-View-Controller.
 
 #### Implementation:
-Implementation wise we store the observers in the main class (game class) and change its state according to the respective input processed by the available listener.
-Though, it wasn't easy right from the start as our first attemp to implement this feature didn't act as expected. All listeners were always active, since when creating a Menu Button the listener would be activated by the newly created state, and it was far from being a structured and easy-to-read code.
+O padrão Observer é um padrão de design que define uma relação de um-para-muitos entre objetos, de modo que quando um objeto "observável" muda de estado, todos os seus dependentes (os "observadores") são notificados e atualizados automaticamente.
 
 #### Consequences:
 De uma forma sussinta, o Observer pattern permite o seguinte:
 - O single responsibility principle.
 - Código mais organizado
-- Apenas o estado atual do jogo é notificado quando uma entrada é fornecida. Isto porque é definida uma dependência de um-para-muitos entre objetos, de modo a que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente.
+- Apenas o estado atual do jogo é notificado quando uma entrada é fornecida.
 
 
 
@@ -223,55 +222,6 @@ Estas são as principais vantagens dos dois design pattens:
 
 
 
-PAREI AQUI!!
-### Different types of commands
-#### **Problem in Context:** 
-In an initial and more simplified version of the current game, the diversity in between buttons was not significant. However, in the course of the development of the project, the number of buttons increased exponentially and the need to generalise the button element became more evident. That said and knowing that good software design is often based on the principle of separation of concerns, a major refactor had to be done. 
-
-#### The Pattern:
-We have applied the **_Command_** also know as Action pattern. This pattern turns a request into a stand-alone object that contains all information about the request.
-
-#### Implementation:
-Regarding the implemetation process, all the Button classes were deleted and transformed into a single **Button** with a command attribute. These **commands**  implement the same interface having an execution method that takes no parameters. This interface lets you use various commands with the same request sender, without coupling it to concrete classes of commands. As a bonus, now you can switch command objects linked to the sender, effectively changing the sender’s behavior at runtime.
-
-
-These classes can be found in the following files:
-- [Button](../src/main/java/com/g57/model/element/button/Button.java)
-- [Command](../src/main/java/com/g57/model/item/command/Command.java)
-
-#### Consequences:
-The Command Pattern allows the following consequences:
-- You can decouple classes that invoke operations from classes that perform these operations (SRP).
-- You can implement undo/redo.
-- You can assemble a set of simple commands into a complex one.
-- The code may become more complicated since you’re introducing a whole new layer between senders and receivers.
-
-
-
-
-### GUI
-#### Problem in Context:
-Aiming for a structured and unstable (easy to change) code, we tried to make it as general as possible. The lanterna library contains various functions that aren't useful to our program, Interface Segregation Principle violation, and lacks some other functions that our interface needs. Also, if using the raw library, our game (high level module) would be directly depending on a low level module. This is a violation of the Dependency Inversion Principle (DIP). A need to implement an interface that solves these problems was born. 
-
-#### The Pattern: 
-We have applied the **_Facade_** pattern. A facade provides a simple interface to a complex subsystem which contains lots of moving parts, allowing us to only include the features that really matter.
-
-#### Implementation:
-
-
-These classes can be found in the following files:
-- [Game](../src/main/java/com/g57/Game.java)
-- [GUI](../src/main/java/com/g57/gui/GUI.java)
-- [LanternaGUI](../src/main/java/com/g57/gui/LanternaGUI.java)
-
-#### Consequences: 
-The use of the Facade Pattern in the current design allows the following benefits:
-- Isolate code from the complexity of a subsystem.
-- Promotes testability and replaceability.
-- Expand lanterna functionalities as well as respecting the Interface Segregation Principle.
-
-
-
 
 ## Known-code smells
 
@@ -288,6 +238,8 @@ Não encontramos nada que pudesse comprometer o nosso código.
 <p align="center">
   <b><i>Fig 6. Code coverage screenshot</i></b>
 </p>
+
+
 
 ### Link to mutation testing report
 [Mutation tests](../reports/tests/test/index.html)
