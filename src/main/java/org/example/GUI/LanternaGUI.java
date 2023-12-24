@@ -1,7 +1,6 @@
 package org.example.GUI;
 
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
@@ -12,7 +11,6 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import org.example.model.Position;
-import org.example.model.game.elements.Packet;
 
 import java.awt.*;
 import java.io.File;

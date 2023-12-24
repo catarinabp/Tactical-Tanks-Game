@@ -26,9 +26,6 @@ public class NPCController extends GameController {
         }
     }
 
-    public void randomShoot() {
-
-    }
 
     private void moveNPC(NPCs npc) {
         Position playerPosition = getModel().getPlayerTank().getPosition();

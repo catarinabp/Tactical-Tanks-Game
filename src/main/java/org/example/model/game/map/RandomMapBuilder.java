@@ -51,17 +51,15 @@ public class RandomMapBuilder extends MapBuilder {
 
     @Override
     protected List<Hole> createHoles() {
-        List<Hole> holes = new ArrayList<>();
 
 
-        return holes;
+        return new ArrayList<>();
     }
 
     @Override
     protected List<Box> createBoxes() {
-        List<Box> boxes = new ArrayList<>();
 
-        return boxes;
+        return new ArrayList<>();
     }
 
     @Override
