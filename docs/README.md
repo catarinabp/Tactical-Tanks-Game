@@ -233,7 +233,7 @@ Não encontramos nada que pudesse comprometer o nosso código.
 
 ### Screenshot of coverage report
 <p align="center" justify="center">
-  <img src="images/screenshots/"/> falta!!
+  <img src="images/screenshots/coverage.jpg"/>
 </p>
 <p align="center">
   <b><i>Fig 6. Code coverage screenshot</i></b>
