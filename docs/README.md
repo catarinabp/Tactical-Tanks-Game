@@ -124,7 +124,7 @@ This project was developed by Afonso Campelo Poças (up202008323@fe.up.pt), Ana 
   <img src="screenshots/game over.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. Mensagem de Game Over</i></b>
+  <b><i>Fig 4. Mensagem de Game Over</i></b>
 </p>
 
 <br>
@@ -140,23 +140,18 @@ Decidimos não avançar com esta ideia pois a principal dificuldade do jogo est�
 As features mais importantes para dinamizar o jogo foram implementadas com sucesso e por isso não achamos ter perdido em não ter implementado estas duas features.
 
 
-
-
-
-
-
 ## Design
 
-### General Structure
+### Estrutura geral - organização
 
 <br>
 <br />
 
 <p align="center" justify="center">
-  <img src="uml.png"/>
+  <img src="uml.jpg"/>
 </p>
 <p align="center">
-  <b><i>Fig 6. Mensagem de Game Over</i></b>
+  <b><i>Fig 5. Esquema UML </i></b>
 </p>
 
 <br>
@@ -166,89 +161,69 @@ As features mais importantes para dinamizar o jogo foram implementadas com suces
 #### Problem in Context:
 Como o nosso jogo usa Graphical User Interface, contém varios gameStates e várias features, decidimos usar alguns dos patterns que viemos a estudar ao longo do semestre. Assim, desenvolveríamos o jogo da forma mais eficiente possível: uma estrutura simples e organizada.
 
-
 #### The Pattern:
 Escolhemos usar o **_State Pattern_**. Essa abordagem utiliza subclasses para representar cada estado, sendo por isso mais fácil mudar de estado. Fica tudo encapsulado numa única classe e usa-se o Single Responsibility Principle e Open/Closed Principle.
 
 A principal razão para esta escolha foi a necessidade de lidar com as mudanças de estado dos objetos. O State Pattern permite a desvinculação das transições de estado do algoritmo principal. Dá-nos ainda a liberdade de criar novos estados mais facilmente à medida que desenvolvemos o jogo se necessário.
 
 #### Implementation:
-Regarding the implementation, we now have classes which main purpose is to store data (model), classes that control the logic of the game (controllers) and classes that are responsible for the visual effects on the screen (viewers), these types of classes associate with each other in the following manner:
-
-<p align="center" justify="center">
-  <img src="images/UML/MVC.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 1. Model, Controller and Viewer pattern design</i></b>
-</p>
-
-As for the different states, they are divided with the same methodology as the mvc style, and permite the game to alter its behavior in a simple and efficient way.
+No que diz respeito à implementação, agora temos classes cujo principal propósito é armazenar dados (model), classes que controlam a lógica do jogo (controllers) e classes que são responsáveis pelos efeitos visuais na tela (viewers). 
 
 #### Consequences:
-The use of these patterns in the current design allow the following benefits:
-- The several states that represent the different menus become explicit in the code, instead of relying on a series of flags.
-- A well organized code acknowledging the Single Responsibility Principle.
-- Easy to add new features throughout the development stage.
+A utilização deste pattern proporciona os seguintes benefícios:
+
+- Os diversos estados que representam os diferentes menus tornam-se explícitos no código, em vez de dependerem de uma série de flags.
+- Um código bem organizado que respeita o Single Responsibility Principle.
+- Facilidade para adicionar novos recursos ao longo do desenvolvimento do jogo.
+
 
 
 ### Observers and listeners
 #### Problem in Context:  
-Our game is controlled both by the mouse and the keyboard, many are the ways to receive input from these devices, for example: a thread that is running and every time it catches a signal it sends to the game itself (polling), the game being responsible for asking for input when needed, which is costly for our program since we may not send any signal to the program and unnecessary calls are made or the way we decided to implement which consists of using observers also known as listeners that are responsible for receiving the said input and redistributing it in a nicer and more usefull way to us. This takes some "weight" of the program as it will no longer need to be polling for input, as it will be properly warned when received.
+É usado o teclado para receber o input do jogador. Existem várias maneiras de receber entrada desses dispositivos. Para isso decidimos recorrer aos Observers and Listeners, que são responsáveis por receber a entrada mencionada e redistribuí-la de uma maneira mais inteligente e tornando o programa mais eficiente.
 
 #### The Pattern:
-We have applied the **_Observer pattern_** which is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing. With this in mind the pattern allowed to solve the identified problems and apply a sustainable mechanism to receive any program input.
+Usamos o **_Observer pattern_**. Estabelece uma dependência de um-para-muitos entre objetos de modo que, quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Encapsula os componentes centrais (ou comuns ou do motor) em uma abstração de Subject, e os componentes variáveis (ou opcionais ou de interface do usuário) em uma hierarquia de Observer. Essa abordagem representa a parte "View" do Model-View-Controller.
 
 #### Implementation:
 Implementation wise we store the observers in the main class (game class) and change its state according to the respective input processed by the available listener.
 Though, it wasn't easy right from the start as our first attemp to implement this feature didn't act as expected. All listeners were always active, since when creating a Menu Button the listener would be activated by the newly created state, and it was far from being a structured and easy-to-read code.
 
-<p align="center" justify="center">
-  <img src="images/UML/ObsListener.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 2. Observers and Listeners screenshot</i></b>
-</p>
-
 #### Consequences:
-Some consequences of using the stated pattern:
-- Promotes the single responsibility principle.
-- Clean code.
-- Only the current game state is warned when an input is given.
+De uma forma sussinta, o Observer pattern permite o seguinte:
+- O single responsibility principle.
+- Código mais organizado
+- Apenas o estado atual do jogo é notificado quando uma entrada é fornecida. Isto porque é definida uma dependência de um-para-muitos entre objetos, de modo a que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente.
 
-### Battlefield builder
+
+
+
+### MapBuilder e LoaderMapBuilder
 #### Problem in Context:
-A battlefield consists in an aglomeration of elements such as walls, bombs, portals, a player, etc. 
-Having different battlefields in the various levels, instead of having a builder to each level, a battlefield loader that reads from a file and inserts into its super class (battlefield builder) the needed elements, was the most appealing option. This implementation makes it possible to only create specific elements and also generate battlefields in different ways.
+Temos como features as paredes, os buracos, as caixas, etc. São bastantes os elementos com uma posição fixa no mapa, portanto, seria preciso um construtor para cada nível. Nestas situações o que faz mais sentido fazer é criar um LoaderMapbuilder dos mapas que lêm e inserem na super classe (Map builder) os elementos todos. Essa implementação faz com que seja possível distinguir a construção de um objeto com imensos elementos da sua representação, de modo a que o mesmo processo de construção possa gerar representações diferentes.
 
 #### The Pattern:
-
-Outro design pattern escolhido é o Factory Method pois permite criar subclasses, nomeadamente, os elementos do jogo.
-
-The **_Factory Method_** and **_Builder_** are two creational design patterns, the first one provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. The second, allows you to construct complex objects step by step making a simpler code.
+Tal como indiretamente mencionado em cima, o design pattern escolhido são **_Factory Method_** pois permite criar subclasses, nomeadamente, os elementos do jogo e o **_Builder_** para gerar os vários mapas.
 
 #### Implementation:
-A factory is resposible for constructing the whole but the workers are the ones that actually execute the job. Analogously, our BattlefieldBuilder is a factory and its subclasses represent the workers.
-As for the implmentation, the BattlefieldBuilder is an abstract class which knows how to construct a battlefield, however only its subclasses supply the necessary components of the battlefield. The BattlefieldLoader is one of referred subclasses that consists in a worker capable of reading different levels from different files. Another possible implementation would be a random loader that generates random components for the battlefield.
-The builder pattern is implemented in all of the above classes by dividing the constructing in smaller steps.
+O MapBuilder é responsável por contruir com os elementos (subclasses), ou seja, paredes, buracos, etc.
+Podemos reumir o Factory Method ao método de criar uma superclasse especifica todo comportamento padrão e genérico (usando "placeholders"), e depois delega os detalhes da criação para subclasses.
 
-<p align="center" justify="center">
-  <img src="images/UML/BuilderLoader.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 3. Battlefield builder and loader</i></b>
-</p>
-
-These classes can be found in the following files:
-- [BattlefieldBuilder](../src/main/java/com/g57/model/battlefield/BattlefieldBuilder.java)
-- [BattlefieldLoader](../src/main/java/com/g57/model/battlefield/BattlefieldLoader.java)
+Links para as classes:
+- [MapBuilder](../src/main/java/org/example/model/game/map/MapBuilder.java)
+- [LoaderMapBuilder](../src/main/java/org/example/model/game/map/LoaderMapBuilder.java)
 
 #### Consequences:
-Benefits of applying the above pattern:
-- You avoid tight coupling between the creator and the concrete products.
-- Open/Closed Principle. You can introduce new types of products into the program without breaking existing client code.
-- You can construct objects step-by-step, defer construction steps or run steps recursively.
+Estas são as principais vantagens dos dois design pattens:
+- O Builder é útil para quando é necessário construir objetos complexos passo a passo. Ele permite a criação de diferentes representações do mesmo objeto.
+- Pode haver diferentes builders para criar objetos com características específicas, mantendo a mesma estrutura de construção.
+- Open/Closed Principle. Fica mais fácil fazer alterações à medida que desenvolvemos o jogo
+- Quando ao Factory method, este é útil para quando a criação de objetos é delegada para subclasses. Cada subclasse pode fornecer uma implementação específica.
+- Facilita a extensão, permitindo que novas subclasses da fábrica sejam introduzidas sem modificar o código existente.
 
 
+
+PAREI AQUI!!
 ### Different types of commands
 #### **Problem in Context:** 
 In an initial and more simplified version of the current game, the diversity in between buttons was not significant. However, in the course of the development of the project, the number of buttons increased exponentially and the need to generalise the button element became more evident. That said and knowing that good software design is often based on the principle of separation of concerns, a major refactor had to be done. 
@@ -259,12 +234,6 @@ We have applied the **_Command_** also know as Action pattern. This pattern turn
 #### Implementation:
 Regarding the implemetation process, all the Button classes were deleted and transformed into a single **Button** with a command attribute. These **commands**  implement the same interface having an execution method that takes no parameters. This interface lets you use various commands with the same request sender, without coupling it to concrete classes of commands. As a bonus, now you can switch command objects linked to the sender, effectively changing the sender’s behavior at runtime.
 
-<p align="center" justify="center">
-  <img src="images/UML/ButtonCommand.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 4. Buttons and commands</i></b>
-</p>
 
 These classes can be found in the following files:
 - [Button](../src/main/java/com/g57/model/element/button/Button.java)
@@ -278,6 +247,8 @@ The Command Pattern allows the following consequences:
 - The code may become more complicated since you’re introducing a whole new layer between senders and receivers.
 
 
+
+
 ### GUI
 #### Problem in Context:
 Aiming for a structured and unstable (easy to change) code, we tried to make it as general as possible. The lanterna library contains various functions that aren't useful to our program, Interface Segregation Principle violation, and lacks some other functions that our interface needs. Also, if using the raw library, our game (high level module) would be directly depending on a low level module. This is a violation of the Dependency Inversion Principle (DIP). A need to implement an interface that solves these problems was born. 
@@ -286,12 +257,7 @@ Aiming for a structured and unstable (easy to change) code, we tried to make it 
 We have applied the **_Facade_** pattern. A facade provides a simple interface to a complex subsystem which contains lots of moving parts, allowing us to only include the features that really matter.
 
 #### Implementation:
-<p align="center" justify="center">
-  <img src="images/UML/GUI.png"/>
-</p>
-<p align="center">
-  <b><i>Fig 5. Observers and Listeners screenshot</i></b>
-</p>
+
 
 These classes can be found in the following files:
 - [Game](../src/main/java/com/g57/Game.java)
@@ -304,31 +270,27 @@ The use of the Facade Pattern in the current design allows the following benefit
 - Promotes testability and replaceability.
 - Expand lanterna functionalities as well as respecting the Interface Segregation Principle.
 
+
+
+
 ## Known-code smells
 
-We have fixed all the errors reported by error-prone. No other major code smells identified. 
+Não encontramos nada que pudesse comprometer o nosso código.
+
+
 
 ## Testing
 
 ### Screenshot of coverage report
 <p align="center" justify="center">
-  <img src="images/screenshots/codeCoverage"/>
+  <img src="images/screenshots/"/> falta!!
 </p>
 <p align="center">
   <b><i>Fig 6. Code coverage screenshot</i></b>
 </p>
 
 ### Link to mutation testing report
-[Mutation tests](../build/reports/pitest/202105302045/index.html)
-
-
-
-
-
-
-
-
-
+[Mutation tests](../reports/tests/test/index.html)
 
 
 ### SELF-EVALUATION
