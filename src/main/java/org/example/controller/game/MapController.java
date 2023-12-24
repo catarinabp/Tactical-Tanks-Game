@@ -1,21 +1,17 @@
 package org.example.controller.game;
 
 import org.example.GUI.GUI;
-import org.example.GUI.LanternaGUI;
 import org.example.Game;
 import org.example.model.game.map.LoaderMapBuilder;
 import org.example.model.game.map.Map;
 import org.example.model.menu.GameOver;
-import org.example.model.menu.Menu;
 import org.example.model.menu.Win;
 import org.example.states.GameOverState;
 import org.example.states.GameState;
-import org.example.states.MenuState;
 import org.example.states.WinState;
 
 import java.io.IOException;
 
-import static java.time.zone.ZoneRulesProvider.refresh;
 
 public class MapController extends GameController {
     private final ShootController shootController;
