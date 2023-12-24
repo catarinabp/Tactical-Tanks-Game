@@ -2,6 +2,9 @@ package org.example.viewer.game;
 
 import org.example.GUI.GUI;
 import org.example.model.Position;
+import org.example.model.game.elements.NPCs;
+import org.example.model.game.elements.Packet;
+import org.example.model.game.elements.PlayerTank;
 import org.example.states.GameState;
 import org.example.viewer.Viewer;
 import org.example.model.game.elements.Element;

@@ -60,7 +60,7 @@ public class RecordViewer extends Viewer<Menu> {
             }
         }
 
-        // Sort the high scores by elapsed time (fewer seconds)
+        // Sort the high scores by elapsed time (less seconds)
         highScores.sort((score1, score2) -> {
             long time1 = Long.parseLong(score1.substring(score1.lastIndexOf(":") + 1, score1.lastIndexOf(" seconds")));
             long time2 = Long.parseLong(score2.substring(score2.lastIndexOf(":") + 1, score2.lastIndexOf(" seconds")));

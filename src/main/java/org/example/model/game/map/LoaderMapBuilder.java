@@ -16,7 +16,7 @@ public class LoaderMapBuilder extends MapBuilder {
     private final List<String> lines;
 
     public LoaderMapBuilder(int level) throws IOException {
-        LoaderMapBuilder.level = level;
+        this.level = level;
 
         URL resource = LoaderMapBuilder.class.getResource("/levels/level" + level + ".lvl");
         BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
@@ -28,7 +28,7 @@ public class LoaderMapBuilder extends MapBuilder {
         return level;
     }
 
-    public List<String> readLines(BufferedReader br) throws IOException {
+    private List<String> readLines(BufferedReader br) throws IOException {
         List<String> lines = new ArrayList<>();
         for (String line; (line = br.readLine()) != null; )
             lines.add(line);

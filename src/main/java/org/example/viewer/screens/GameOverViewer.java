@@ -7,7 +7,7 @@ import org.example.viewer.Viewer;
 
 public class GameOverViewer extends Viewer<Menu> {
     private static final String TITLE_COLOR = "#43A6C6";
-
+    private static final String DEFAULT_COLOR = "#FFFFFF";
     private static final int TITLE_X_POS = 9;
 
     private static final int TITLE_Y_POS = 3;

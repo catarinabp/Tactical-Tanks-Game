@@ -1,6 +1,7 @@
 package org.example.viewer.game;
 
 import org.example.GUI.GUI;
+import org.example.model.game.elements.Hole;
 import org.example.model.game.elements.Shoot;
 
 public class ShootViewer implements ElementViewer<Shoot> {

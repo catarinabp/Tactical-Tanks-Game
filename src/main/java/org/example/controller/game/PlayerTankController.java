@@ -4,6 +4,7 @@ import org.example.GUI.GUI;
 import org.example.model.Position;
 import org.example.model.game.elements.Packet;
 import org.example.model.game.map.Map;
+import org.example.controller.game.ShootController;
 import org.example.strategy.GreyPacketStrategy;
 import org.example.strategy.OrangePacketStrategy;
 import org.example.strategy.PacketStrategy;
